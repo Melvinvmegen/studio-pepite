@@ -25,9 +25,8 @@
             v-divider
             br
             .d-flex.justify-center.align-center(:class="{'flex-column': $vuetify.breakpoint.smAndDown}")
-              h3.primary--text MELVINVMEGEN
-              a(href="mailto:melvin.vmegen@gmail.com") melvin.vmegen@gmail.com
-              a(href="+33764470724") 07 64 47 07 24
+              h3.primary--text fanny coderey
+              a(href="mailto:fanny.coderey@gmail.com") fanny.coderey@gmail.com
               .icons
                 v-btn(v-for='link in socialLinks' :key='link.id' icon='')
                   a.icon-link(:href="link.href")
