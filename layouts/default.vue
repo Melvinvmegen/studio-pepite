@@ -45,7 +45,7 @@ export default {
     text-decoration: none;
   }
 
-  .nuxt-link-active div {
+  .nuxt-link-active .primary--text {
     color: #000 !important;
   }
 
