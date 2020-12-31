@@ -49,6 +49,7 @@ export default {
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
+  padding-left: 12vw;
 }
 
 .horizontal-container .v-image {

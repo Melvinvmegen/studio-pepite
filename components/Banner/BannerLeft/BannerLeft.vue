@@ -1,6 +1,6 @@
 <template lang="pug">
   .header
-    v-container.col-md-10.col-12.justify-center.d-flex.align-center
+    v-container.col-12.justify-center.d-flex.align-center
       TextHeader(:blabla="blabla")
         span {{ blabla.description }}
         CTA(v-if="ctaText && link" :className="true" color="accent" :text="ctaText" :link="link")
