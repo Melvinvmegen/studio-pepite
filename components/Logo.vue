@@ -1,12 +1,10 @@
 <template lang='pug'>
   .logo.d-flex
-    img(:src="whitelogo" alt="" class="logo" v-if="color")
-    img(:src="defaultlogo" alt="" class="logo" v-else)
+    img(:src="logoPepite" alt="" class="logo")
 </template>
 
 <script>
-import Logo from '~/assets/LOGO.svg'
-import WhiteLogo from '~/assets/logo blanc.svg'
+import logoPepite from '~/assets/logo_pepite_color.svg'
 
 export default {
   props: {
@@ -17,8 +15,7 @@ export default {
   },
   data () {
     return {
-      defaultlogo: Logo,
-      whitelogo: WhiteLogo
+      logoPepite
     }
   }
 }
