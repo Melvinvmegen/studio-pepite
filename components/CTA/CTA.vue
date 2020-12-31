@@ -1,5 +1,5 @@
 <template lang="pug">
-  .my-2(:class="{centered: centered}")
+  .my-5(:class="{centered: centered}")
     v-btn(dark large='')
       a.white--text(:href="link")
         | {{ text }}
