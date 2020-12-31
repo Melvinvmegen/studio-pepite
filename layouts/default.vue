@@ -19,15 +19,37 @@ export default {
   data () {
     return {
       navItems: [
-        { id: 1, title: 'a propos', link: 'frontEnd' },
-        { id: 2, title: 'portfolio', link: 'backEnd' },
-        { id: 3, title: 'contact', link: 'referencement' }
+        { id: 1, title: 'a propos', link: 'about' },
+        { id: 2, title: 'portfolio', link: '' },
+        { id: 3, title: 'contact', link: '' }
       ],
       socialLinks: [
-        { id: 1, icon: 'mdi-instagram', href: 'https://www.linkedin.com/in/melvin-van-megen/' },
-        { id: 2, icon: 'mdi-linkedin', href: 'https://github.com/Melvinvmegen' }
+        { id: 1, icon: 'mdi-instagram', href: '' },
+        { id: 2, icon: 'mdi-linkedin', href: 'https://www.linkedin.com/in/fanny-coderey-5b418b12a' }
       ]
     }
   }
 }
 </script>
+
+<style>
+  @font-face {
+    font-family: 'Cocogoose';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('~assets/Cocogoose.ttf') format('truetype');
+  }
+
+  .v-application a {
+    text-decoration: none;
+  }
+
+  .nuxt-link-active div {
+    color: #000 !important;
+  }
+
+  html {
+    font-size: 14px
+  }
+</style>
