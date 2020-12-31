@@ -2,7 +2,7 @@
   v-card.footer.flex(height="165")
     v-footer(padless='' absolute)
       v-card.white.flex(flat='' tile='')
-        v-card-title.white
+        v-card-title.white.pl-4
           .d-flex.flex-column.align-center(:class="{'justify-center': $vuetify.breakpoint.smAndDown, 'container': $vuetify.breakpoint.smAndDown}")
             v-spacer
             a.email(href="mailto:fanny.coderey@gmail.com") fanny.coderey@gmail.com
