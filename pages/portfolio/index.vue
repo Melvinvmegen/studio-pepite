@@ -32,12 +32,12 @@ export default {
         {
           title: 'le bioclimatique en co-living',
           link: 'portfolio',
-          src: 'project_1.jpeg'
+          src: 'project_1.jpg'
         },
         {
           title: 'la théorie du jeu',
           link: 'portfolio',
-          src: 'project_2.jpeg'
+          src: 'project_2.jpg'
         },
         {
           title: 'retrorama',
@@ -57,12 +57,12 @@ export default {
         {
           title: 'bubble',
           link: 'portfolio',
-          src: 'project_5.jpeg'
+          src: 'project_5.jpg'
         },
         {
           title: 'revival',
           link: 'portfolio',
-          src: 'project_6.jpeg'
+          src: 'project_6.jpg'
         },
         {
           title: 'miro x mondrian',

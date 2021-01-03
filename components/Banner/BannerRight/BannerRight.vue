@@ -1,14 +1,10 @@
 <template lang="pug">
   .header-right
     .home-container.d-flex(v-if="$route.name !== 'about'")
-      v-img(src="https://source.unsplash.com/random")
-      v-img(src="https://source.unsplash.com/random")
-      v-img(src="https://source.unsplash.com/random")
-      v-img(src="https://source.unsplash.com/random")
-      v-img(src="https://source.unsplash.com/random")
+      v-img(v-for="n in 6" :src='require(`~/assets/project_${n}.jpg`)')
     .about-container(v-else)
       .about-skill
-        img(src="~/assets/about_me.jpeg" width="500")
+        img(src="~/assets/about_me.jpg" width="500")
         .d-flex.justify-space-around
           .about-text.col-10
             TextHeader(:blabla="blabla")
@@ -16,7 +12,7 @@
       .about_summary
         .summary-img
           .container-full-height
-            img.img-full-height(src="~/assets/about_pepite.jpeg")
+            img.img-full-height(src="~/assets/about_pepite.jpg")
         .d-flex.justify-space-around
           .about-text.col-10
             TextHeader(:blabla="blablaPepite")
