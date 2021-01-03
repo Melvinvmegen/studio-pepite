@@ -2,7 +2,7 @@
   .header
     v-container.col-12.justify-center.d-flex.align-center
       TextHeader(:blabla="blabla")
-        span {{ blabla.description }}
+        span(v-html="blabla.description")
         CTA(v-if="ctaText && link" :className="true" color="accent" :text="ctaText" :link="link")
 </template>
 

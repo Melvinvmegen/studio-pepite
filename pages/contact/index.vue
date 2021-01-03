@@ -4,31 +4,25 @@
       .contact_content.col-5
         .contact_content-wrap
           h1.contact_title
-            | Contact
+            | contact
           .contact_text
             p
-              | Currently, I live in Poland. If you have any questions, suggestions or offers, you can send me email, or call me if you live in Poland.
+              | je vis actuellement en france. n'hésitez pas à me contacter si vous avez des questions, des suggestions ou des offres.
           .details.contact_details
             .contact_details.detail
               span.contact_details-label.detail-label
                 | E-mail
               span.contact_details-separator.detail-separator
               span.contact_details-value.detail-value
-                | fanny.coderey@gmail.com
+                | hello.studiopepite@gmail.com
             .contact_details.detail
               span.contact_details-label.detail-label
-                | Phone number
+                | Téléphone
               span.contact_details-separator.detail-separator
               span.contact_details-value.detail-value
-                | +48 882 435 930
-          .contact__extra
-            h2 See also:
-            p
-              a(href='http://northern-space.com' target='_blank' rel='noopener') northern-space.com
-            p
-              a(href='http://triangleform.com' target='_blank' rel='noopener') triangleform.com
+                | +33 6 68 37 49 80
       .contact-img.col-6
-        v-img.img-contact(src="https://source.unsplash.com/random" width="500")
+        img.d-flex.justify-center.img-contact(src="~/assets/contact.jpg" width="550")
 
 </template>
 

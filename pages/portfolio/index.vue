@@ -1,13 +1,13 @@
 <template lang="pug">
   .full
     .portfolio-container
-      .projects__heading
+      .projects__heading.pa-2
         h1.page__title
-          | My works
+          | mes travaux
       v-row.scroll-container(no-gutters='')
         v-col(v-for='img in projectImages' :key='img.name' cols='12' sm='4')
           v-card.pa-2
-            v-img.project-img(:src='img.src' height='200px' :alt="img.title" :href="img.link")
+            v-img.project-img(:src='require(`~/assets/${img.src}`)' height='200px' :alt="img.title" :href="img.link")
             v-card-title
               | {{ img.title }}
 
@@ -30,49 +30,44 @@ export default {
       link: 'Contact',
       projectImages: [
         {
-          title: 'Top western road trips',
+          title: 'le bioclimatique en co-living',
           link: 'portfolio',
-          src: 'https://source.unsplash.com/random'
+          src: 'project_1.jpeg'
         },
         {
-          title: 'Top western road trips',
+          title: 'la théorie du jeu',
           link: 'portfolio',
-          src: 'https://source.unsplash.com/random'
+          src: 'project_2.jpeg'
         },
         {
-          title: 'Top western road trips',
+          title: 'retrorama',
           link: 'portfolio',
-          src: 'https://source.unsplash.com/random'
+          src: 'project_3.jpg'
         },
         {
-          title: 'Top western road trips',
+          title: 'jacquemus',
           link: 'portfolio',
-          src: 'https://source.unsplash.com/random'
+          src: 'project_4.jpg'
         },
         {
-          title: 'Top western road trips',
+          title: 'dumbo stairs',
           link: 'portfolio',
-          src: 'https://source.unsplash.com/random'
+          src: 'project_8.jpg'
         },
         {
-          title: 'Top western road trips',
+          title: 'bubble',
           link: 'portfolio',
-          src: 'https://source.unsplash.com/random'
+          src: 'project_5.jpeg'
         },
         {
-          title: 'Top western road trips',
+          title: 'revival',
           link: 'portfolio',
-          src: 'https://source.unsplash.com/random'
+          src: 'project_6.jpeg'
         },
         {
-          title: 'Top western road trips',
+          title: 'miro x mondrian',
           link: 'portfolio',
-          src: 'https://source.unsplash.com/random'
-        },
-        {
-          title: 'Top western road trips',
-          link: 'portfolio',
-          src: 'https://source.unsplash.com/random'
+          src: 'project_7.jpg'
         }
       ]
     }
@@ -120,6 +115,7 @@ export default {
 
   .v-card {
     box-shadow: none !important;
+    border-radius: 0 !important;
   }
 
   .v-card .v-card__title {

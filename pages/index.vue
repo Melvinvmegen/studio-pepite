@@ -13,10 +13,10 @@ export default {
   data () {
     return {
       blabla: {
-        title: 'hello, my name is fanny coderey and I love good design',
+        title: 'hello, je m’appelle Fanny et j’ai créé pépite <br> pour vous en faire voir de toutes les couleurs',
         description: ''
       },
-      ctaText: 'more about me',
+      ctaText: 'A propos de moi',
       link: 'about'
     }
   }
