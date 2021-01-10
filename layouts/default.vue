@@ -55,5 +55,6 @@ export default {
 
   h2 {
     font-weight: 600;
+    line-height: 2;
   }
 </style>

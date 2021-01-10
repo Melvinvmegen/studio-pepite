@@ -1,7 +1,7 @@
 <template lang="pug">
   .header-right
     .home-container.d-flex(v-if="$route.name !== 'about'")
-      v-img(v-for="n in 6" :src='require(`~/assets/project_${n}.jpg`)')
+      v-img(v-for="n in 6" :src='require(`~/assets/project_${n}.jpg`)' width="500")
     .about-container(v-else)
       .about-skill
         img(src="~/assets/about_me.jpg" width="500")
@@ -81,6 +81,10 @@ export default {
   padding-bottom: 10vh;
   height: 100%;
   display: flex;
+}
+
+.home-container {
+  height: 60%;
 }
 
 .about_summary {
