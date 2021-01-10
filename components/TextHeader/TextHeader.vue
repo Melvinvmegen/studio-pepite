@@ -1,6 +1,6 @@
 <template lang="pug">
   v-container(:class="{'align-center': $vuetify.breakpoint.smAndDown}")
-    h2(:class="{ 'primary-border': color, 'white--text': white }") {{ blabla.title }}
+    h2(:class="{ 'primary-border': color, 'white--text': white }" v-html="blabla.title")
     br
     slot
 </template>
@@ -23,10 +23,6 @@ export default {
 </script>
 
 <style scoped>
-  h2 {
-    font-weight: 500;
-  }
-
   h2:after {
     content: "";
     display: block;
@@ -56,6 +52,10 @@ export default {
     height: 10px;
     width: 65px;
     border-bottom: 0.1rem solid #d8d8d8;
+  }
+
+  span {
+    line-height: 1.8;
   }
 
   @media only screen and (max-width: 350px) {

@@ -24,7 +24,7 @@ export default {
         { id: 3, title: 'contact', link: 'contact' }
       ],
       socialLinks: [
-        { id: 1, icon: 'mdi-instagram', href: '' },
+        { id: 1, icon: 'mdi-instagram', href: 'https://www.instagram.com/studio.pepite/' },
         { id: 2, icon: 'mdi-linkedin', href: 'https://www.linkedin.com/in/fanny-coderey-5b418b12a' }
       ]
     }
@@ -51,5 +51,10 @@ export default {
 
   html {
     font-size: 14px
+  }
+
+  h2 {
+    font-weight: 600;
+    line-height: 2;
   }
 </style>

@@ -1,58 +1,59 @@
 <template lang="pug">
   .header-right
     .home-container.d-flex(v-if="$route.name !== 'about'")
-      v-img(src="https://source.unsplash.com/random")
-      v-img(src="https://source.unsplash.com/random")
-      v-img(src="https://source.unsplash.com/random")
-      v-img(src="https://source.unsplash.com/random")
-      v-img(src="https://source.unsplash.com/random")
+      v-img(v-for="n in 6" :src='require(`~/assets/project_${n}.jpg`)' width="500")
     .about-container(v-else)
       .about-skill
-        v-img(src="https://source.unsplash.com/random" width="400")
+        img(src="~/assets/about_me.jpg" width="500")
         .d-flex.justify-space-around
-          .about-text.col-5
-            span Currently, I want to show myself as an illustrator in my portfolio. You can find my personal architectural concepts, abstract illustrations, architectural illustrations and illustrations used for presentation of projects.
-            | I try to be a minimalist, which is currently inspiring me the most.
-          .about-skills.col-5
-            h2 WHAT I DO
-            ul(data-fade='right' data-fadetarget='children')
-              li(style='transform: translate(0px, 0px); opacity: 1;')
-                | ilustrations
-              li(style='transform: translate(0px, 0px); opacity: 1;')
-                | architecture ilustrations
-              li(style='transform: translate(0px, 0px); opacity: 1;')
-                | interior design for architecture/developers
-              li(style='transform: translate(0px, 0px); opacity: 1;')
-                | vr visualization tours
+          .about-text.col-10
+            TextHeader(:blabla="blabla")
+              span(v-html="blabla.description")
       .about_summary
         .summary-img
           .container-full-height
-            img.img-full-height(src="https://source.unsplash.com/random")
+            img.img-full-height(src="~/assets/about_pepite.jpg")
         .d-flex.justify-space-around
-          .about-text.col-6
-            span Currently, I want to show myself as an illustrator in my portfolio. You can find my personal architectural concepts, abstract illustrations, architectural illustrations and illustrations used for presentation of projects.
-            | I try to be a minimalist, which is currently inspiring me the most.
-          .about-skills.col-5
-            h2 WHAT I DO
-            ul(data-fade='right' data-fadetarget='children')
-              li(style='transform: translate(0px, 0px); opacity: 1;')
-                | ilustrations
-              li(style='transform: translate(0px, 0px); opacity: 1;')
-                | architecture ilustrations
-              li(style='transform: translate(0px, 0px); opacity: 1;')
-                | interior design for architecture/developers
-              li(style='transform: translate(0px, 0px); opacity: 1;')
-                | vr visualization tours
+          .about-text.col-10
+            TextHeader(:blabla="blablaPepite")
+              span(v-html="blablaPepite.description")
+          //- .about-skills.col-5
+          //-   h2 WHAT I DO
+          //-   ul(data-fade='right' data-fadetarget='children')
+          //-     li(style='transform: translate(0px, 0px); opacity: 1;')
+          //-       | ilustrations
+          //-     li(style='transform: translate(0px, 0px); opacity: 1;')
+          //-       | architecture ilustrations
+          //-     li(style='transform: translate(0px, 0px); opacity: 1;')
+          //-       | interior design for architecture/developers
+          //-     li(style='transform: translate(0px, 0px); opacity: 1;')
+          //-       | vr visualization tours
 
 </template>
 
 <script>
+import TextHeader from '~/components/TextHeader/TextHeader'
 
 export default {
+  components: {
+    TextHeader
+  },
   props: {
     image: {
       type: String,
       default: null
+    }
+  },
+  data () {
+    return {
+      blabla: {
+        title: 'mon identitée',
+        description: 'j’ai grandi au bord de la méditerranée et ai été très vite attirée et inspirée par l’architecture typique provençale, solaire. <br><br> à force de voyages, de lectures et de recherches des grands noms et courants du 20ème siècle (le corbusier, mies van der rohe, williams, prouvé, l’école du bauhaus, l’influence allemande et américaine…) je me suis découverte une passion pour l’architecture aux lignes droites et franches, et aux matériaux bruts, façonnés par le temps (béton, bois, métaux). <br><br>aujourd’hui, j’ai pour avis qu’il est indispensable de penser et de construire en étant responsables du point de vue de l’environnement et de l’écologie. le respect des matériaux, des sites, des échanges humains et du travail sont des points incontestables de l’architecture de demain.'
+      },
+      blablaPepite: {
+        title: 'pourquoi pépite ? ',
+        description: "une pépite par définition (au sens figuré) est une chose dont l'exceptionnelle qualité attire l'attention, un trésor. il est donc de mon devoir de faire de chacun de vos projet, une petite pépite."
+      }
     }
   }
 }
@@ -75,11 +76,15 @@ export default {
 }
 
 .about-container {
-  padding-left: 20vw;
+  padding-left: 10vw;
   padding-top: 10vh;
   padding-bottom: 10vh;
   height: 100%;
   display: flex;
+}
+
+.home-container {
+  height: 60%;
 }
 
 .about_summary {

@@ -1,7 +1,7 @@
 <template lang="pug">
   .section-home.horizontal-container
     BannerLeft.col-md-7.col-12(:blabla='blabla' :ctaText="ctaText" :link="link")
-    BannerRight.col-md-6.col-12(:image="image")
+    BannerRight.col-md-6.col-12(:image="image" :blabla='blabla')
 </template>
 
 <script>
