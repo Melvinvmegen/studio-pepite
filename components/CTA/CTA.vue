@@ -1,8 +1,9 @@
 <template lang="pug">
   .my-5(:class="{centered: centered}")
-    v-btn(dark large='' data-cursor-hover data-cursor-mix-blend-mode="difference")
-      nuxt-link.white--text(:to="link")
-        | {{ text }}
+    nuxt-link.white--text(:to="link" data-cursor-hover data-cursor-mix-blend-mode="difference")
+      v-btn(dark large='')
+        .white--text(:to="link")
+          | {{ text }}
 </template>
 
 <script>
