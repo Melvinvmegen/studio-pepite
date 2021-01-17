@@ -63,7 +63,7 @@ export default {
   }
 
   .cursor-fx {
-    z-index: 9999;
+    z-index: 99999;
   }
 
   .cursor-fx--hover {
