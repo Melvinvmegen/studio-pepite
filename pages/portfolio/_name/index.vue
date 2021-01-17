@@ -4,7 +4,7 @@
       BannerLeft.col-md-7.col-12(:blabla='blabla')
       BannerRight.col-md-6.col-12(:image="blabla.img" :blabla='blabla')
         .project__next(v-if='next_project')
-          nuxt-link(:to="{ name: 'portfolio-name', params: { index: index + 1, name: next_project.link }}")
+          nuxt-link(:to="{ name: 'portfolio-name', params: { index: index + 1, name: next_project.link }}" data-cursor-hover data-cursor-mix-blend-mode="difference" )
             h2.section__title
               | projet suivant
             h3.project__title

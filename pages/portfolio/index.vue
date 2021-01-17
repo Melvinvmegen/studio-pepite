@@ -5,7 +5,7 @@
         h1.page__title
           | mes travaux
       v-row.scroll-container(no-gutters='')
-        v-col(v-for='(project, index) in projectImages' :key='project.title' cols='12' sm='4'  data-cursor-hover data-cursor-mix-blend-mode="difference")
+        v-col(v-for='(project, index) in projectImages' :key='project.title' cols='12' sm='4' data-cursor-hover data-cursor-mix-blend-mode="difference")
           nuxt-link(:to="{ name: 'portfolio-name', params: { index: index, name: project.link, project: project, next_project: projectImages[index + 1] }}")
             v-card.pa-2
               v-img.project-img(:src='require(`~/assets/${project.src}`)' height='200px' :alt="project.title" :href="project.link")
