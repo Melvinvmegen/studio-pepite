@@ -28,6 +28,7 @@
           //-       | interior design for architecture/developers
           //-     li(style='transform: translate(0px, 0px); opacity: 1;')
           //-       | vr visualization tours
+    slot
 
 </template>
 

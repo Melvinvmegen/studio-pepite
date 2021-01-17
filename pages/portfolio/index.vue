@@ -5,11 +5,12 @@
         h1.page__title
           | mes travaux
       v-row.scroll-container(no-gutters='')
-        v-col(v-for='img in projectImages' :key='img.name' cols='12' sm='4')
-          v-card.pa-2
-            v-img.project-img(:src='require(`~/assets/${img.src}`)' height='200px' :alt="img.title" :href="img.link")
-            v-card-title
-              | {{ img.title }}
+        v-col(v-for='(project, index) in projectImages' :key='project.title' cols='12' sm='4')
+          nuxt-link(:to="{ name: 'portfolio-name', params: { index: index, name: project.link, project: project, next_project: projectImages[index + 1] }}")
+            v-card.pa-2
+              v-img.project-img(:src='require(`~/assets/${project.src}`)' height='200px' :alt="project.title" :href="project.link")
+              v-card-title
+                | {{ project.title }}
 
 </template>
 
@@ -31,43 +32,107 @@ export default {
       projectImages: [
         {
           title: 'le bioclimatique en co-living',
-          link: 'portfolio',
-          src: 'project_1.jpg'
+          link: 'le-bioclimatique-en-co-living',
+          src: 'project_1.jpg',
+          desc: 'Lorem Ipsum Lorem Ipsum',
+          projectImages: [
+            { img: 'project_1.jpg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' },
+            { img: 'project_1.jpg', title: "Mise en place d'un hub de blog avec module de recherche d'article." },
+            { img: 'project_1.jpg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
+            { img: 'project_1.jpg', title: 'Classement des meilleurs ostéopathes par ville en fonction de leurs notations.' },
+            { img: 'project_1.jpg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' }
+          ]
         },
         {
           title: 'la théorie du jeu',
-          link: 'portfolio',
-          src: 'project_2.jpg'
+          link: 'la-théorie-du-jeu',
+          src: 'project_2.jpg',
+          desc: 'Lorem Ipsum Lorem Ipsum',
+          projectImages: [
+            { img: 'project_1.jpg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' },
+            { img: 'project_1.jpg', title: "Mise en place d'un hub de blog avec module de recherche d'article." },
+            { img: 'project_1.jpg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
+            { img: 'project_1.jpg', title: 'Classement des meilleurs ostéopathes par ville en fonction de leurs notations.' },
+            { img: 'project_1.jpg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' }
+          ]
         },
         {
           title: 'retrorama',
-          link: 'portfolio',
-          src: 'project_3.jpg'
+          link: 'retrorama',
+          src: 'project_3.jpg',
+          desc: 'Lorem Ipsum Lorem Ipsum',
+          projectImages: [
+            { img: 'project_1.jpg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' },
+            { img: 'project_1.jpg', title: "Mise en place d'un hub de blog avec module de recherche d'article." },
+            { img: 'project_1.jpg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
+            { img: 'project_1.jpg', title: 'Classement des meilleurs ostéopathes par ville en fonction de leurs notations.' },
+            { img: 'project_1.jpg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' }
+          ]
         },
         {
           title: 'jacquemus',
-          link: 'portfolio',
-          src: 'project_4.jpg'
+          link: 'jacquemus',
+          src: 'project_4.jpg',
+          desc: 'Lorem Ipsum Lorem Ipsum',
+          projectImages: [
+            { img: 'project_1.jpg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' },
+            { img: 'project_1.jpg', title: "Mise en place d'un hub de blog avec module de recherche d'article." },
+            { img: 'project_1.jpg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
+            { img: 'project_1.jpg', title: 'Classement des meilleurs ostéopathes par ville en fonction de leurs notations.' },
+            { img: 'project_1.jpg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' }
+          ]
         },
         {
           title: 'dumbo stairs',
-          link: 'portfolio',
-          src: 'project_8.jpg'
+          link: 'dumbo-stairs',
+          src: 'project_8.jpg',
+          desc: 'Lorem Ipsum Lorem Ipsum',
+          projectImages: [
+            { img: 'project_1.jpg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' },
+            { img: 'project_1.jpg', title: "Mise en place d'un hub de blog avec module de recherche d'article." },
+            { img: 'project_1.jpg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
+            { img: 'project_1.jpg', title: 'Classement des meilleurs ostéopathes par ville en fonction de leurs notations.' },
+            { img: 'project_1.jpg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' }
+          ]
         },
         {
           title: 'bubble',
-          link: 'portfolio',
-          src: 'project_5.jpg'
+          link: 'bubble',
+          src: 'project_5.jpg',
+          desc: 'Lorem Ipsum Lorem Ipsum',
+          projectImages: [
+            { img: 'project_1.jpg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' },
+            { img: 'project_1.jpg', title: "Mise en place d'un hub de blog avec module de recherche d'article." },
+            { img: 'project_1.jpg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
+            { img: 'project_1.jpg', title: 'Classement des meilleurs ostéopathes par ville en fonction de leurs notations.' },
+            { img: 'project_1.jpg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' }
+          ]
         },
         {
           title: 'revival',
-          link: 'portfolio',
-          src: 'project_6.jpg'
+          link: 'revival',
+          src: 'project_6.jpg',
+          desc: 'Lorem Ipsum Lorem Ipsum',
+          projectImages: [
+            { img: 'project_1.jpg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' },
+            { img: 'project_1.jpg', title: "Mise en place d'un hub de blog avec module de recherche d'article." },
+            { img: 'project_1.jpg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
+            { img: 'project_1.jpg', title: 'Classement des meilleurs ostéopathes par ville en fonction de leurs notations.' },
+            { img: 'project_1.jpg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' }
+          ]
         },
         {
           title: 'miro x mondrian',
-          link: 'portfolio',
-          src: 'project_7.jpg'
+          link: 'miro-x-mondrian',
+          src: 'project_7.jpg',
+          desc: 'Lorem Ipsum Lorem Ipsum',
+          projectImages: [
+            { img: 'project_1.jpg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' },
+            { img: 'project_1.jpg', title: "Mise en place d'un hub de blog avec module de recherche d'article." },
+            { img: 'project_1.jpg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
+            { img: 'project_1.jpg', title: 'Classement des meilleurs ostéopathes par ville en fonction de leurs notations.' },
+            { img: 'project_1.jpg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' }
+          ]
         }
       ]
     }
