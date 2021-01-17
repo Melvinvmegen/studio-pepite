@@ -1,7 +1,7 @@
 <template lang="pug">
   .my-5(:class="{centered: centered}")
-    v-btn(dark large='')
-      a.white--text(:href="link")
+    v-btn(dark large='' data-cursor-hover data-cursor-mix-blend-mode="difference")
+      nuxt-link.white--text(:to="link")
         | {{ text }}
 </template>
 

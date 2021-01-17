@@ -7,8 +7,7 @@
       .main-header-center.col-lg-3(v-if="this.$vuetify.breakpoint.mdAndUp")
         v-list-item.nav-item.nav-anim(v-for="item in navItems" dark exact :key="item.name")
           nuxt-link(:to="{name: item.link}")
-            .primary--text {{ item.title }}
-            span.line.-bottom
+            .primary--text(data-cursor-hover data-cursor-mix-blend-mode="difference") {{ item.title }}
       .main-header-center(v-else)
         v-app-bar-nav-icon(@click.stop="drawer= true")
 
@@ -21,7 +20,6 @@
               nuxt-link(:to="{name: item.link}")
                 v-list-item-content
                   v-list-item-title.ml-4 {{ item.title }}
-                    span.line.-bottom
             v-divider
             br
             .d-flex.justify-center.align-center(:class="{'flex-column': $vuetify.breakpoint.smAndDown}")

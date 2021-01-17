@@ -1,5 +1,5 @@
 <template lang='pug'>
-  .logo.d-flex
+  .logo.d-flex(data-cursor-hover data-cursor-mix-blend-mode="difference")
     img(:src="logoPepite" alt="" class="logo")
 </template>
 

@@ -5,16 +5,20 @@
     v-main
       nuxt
     Footer(:socialLinks='socialLinks')
+    cursor-fx(:key="$route.fullPath")
 </template>
 
 <script>
+import '@luxdamore/vue-cursor-fx/dist/CursorFx.css'
+import { CursorFx } from '@luxdamore/vue-cursor-fx'
 import NavBar from '~/components/Navbar'
 import Footer from '~/components/Footer'
 
 export default {
   components: {
     NavBar,
-    Footer
+    Footer,
+    CursorFx
   },
   data () {
     return {
@@ -56,5 +60,18 @@ export default {
   h2 {
     font-weight: 600;
     line-height: 2;
+  }
+
+  .cursor-fx {
+    z-index: 9999;
+  }
+
+  .cursor-fx--hover {
+    color: white !important;
+    cursor: pointer !important;
+  }
+
+  button {
+    cursor: none !important;
   }
 </style>

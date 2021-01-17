@@ -22,7 +22,7 @@
               span.contact_details-value.detail-value
                 | +33 6 68 37 49 80
       .contact-img.col-6
-        img.d-flex.justify-center.img-contact(src="~/assets/contact.jpg" width="550")
+        img.d-flex.justify-center.img-contact(src="~/assets/contact.jpg" width="550" data-cursor-hover data-cursor-mix-blend-mode="difference")
 
 </template>
 
