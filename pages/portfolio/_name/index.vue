@@ -3,6 +3,8 @@
     .section-home.horizontal-container
       BannerLeft.col-md-7.col-12(:blabla='blabla')
       BannerRight.col-md-6.col-12(:image="blabla.img" :blabla='blabla')
+        .home-container.d-flex
+          v-img(v-for="project in blabla.projectImages" :src='require(`~/assets/${project.img}`)' width="500" height='600' data-cursor-hover data-cursor-mix-blend-mode="difference")
         .project__next(v-if='next_project')
           nuxt-link(:to="{ name: 'portfolio-name', params: { index: index + 1, name: next_project.link }}" data-cursor-hover data-cursor-mix-blend-mode="difference" )
             h2.section__title
