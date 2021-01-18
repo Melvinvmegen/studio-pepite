@@ -13,7 +13,7 @@ export default {
   data () {
     return {
       blabla: {
-        title: 'hello, je m’appelle Fanny et j’ai créé pépite <br> pour vous en faire voir de toutes les couleurs',
+        title: 'bonjour, je m’appelle Fanny et j’ai créé pépite <br> pour vous en faire voir de toutes les couleurs',
         description: ''
       },
       ctaText: 'A propos de moi',
