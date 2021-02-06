@@ -6,7 +6,7 @@
       .about-skill
         img(src="~/assets/about_me.jpg" width="500" data-cursor-hover data-cursor-mix-blend-mode="difference")
         .d-flex.justify-space-around
-          .about-text.col-10
+          .about-text.col-6
             TextHeader(:blabla="blabla")
               span(v-html="blabla.description")
       .about_summary
@@ -14,7 +14,7 @@
           .container-full-height
             img.img-full-height(src="~/assets/about_pepite.jpg" data-cursor-hover data-cursor-mix-blend-mode="difference")
         .d-flex.justify-space-around
-          .about-text.col-10
+          .about-text.col-6
             TextHeader(:blabla="blablaPepite")
               span(v-html="blablaPepite.description")
           //- .about-skills.col-5
@@ -70,7 +70,6 @@ export default {
 }
 
 .header-right {
-  width: 80%;
   display: flex;
   align-items: center;
 }

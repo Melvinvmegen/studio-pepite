@@ -1,7 +1,8 @@
 <template lang="pug">
-  .section-home.horizontal-container
-    BannerLeft.col-md-7.col-12(:blabla='blabla' :ctaText="ctaText" :link="link")
-    BannerRight.col-md-6.col-12(:image="image" :blabla='blabla')
+  .full-horizontal-container
+    .section-home.horizontal-container(:style="{ width: setWidth }")
+      BannerLeft.col-md-2.col-12(:blabla='blabla' :ctaText="ctaText" :link="link" ref="banner_1")
+      BannerRight(:image="image" :blabla='blabla' ref="banner_2")
 </template>
 
 <script>
@@ -30,6 +31,22 @@ export default {
       type: String,
       default: null
     }
+  },
+  data () {
+    return {
+      isMounted: false
+    }
+  },
+  computed: {
+    setWidth () {
+      if (!this.isMounted) {
+        return 300 + 'vw'
+      }
+      return (this.$refs.banner_1.$el.clientWidth + this.$refs.banner_2.$el.clientWidth) * 1.1 + 'px'
+    }
+  },
+  mounted () {
+    this.isMounted = true
   }
 }
 </script>
@@ -45,20 +62,40 @@ export default {
   min-height: 700px;
 }
 
+.full-horizontal-container {
+  width: 100vh;
+  height: 100vw;
+  transform: rotate(-90deg) translateX(-100vh);
+  transform-origin: top left;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  position: absolute;
+  display: block;
+  margin: 0;
+  top: 0;
+  left: 0;
+  padding-top: 1px;
+}
+
 .horizontal-container {
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
   padding-left: 12vw;
+  flex-direction: row;
+  transform: rotate(90deg) translateY(-100vh);
+  transform-origin: top left;
+  width: 400vw;
 }
 
 .horizontal-container .v-image {
   margin-right: 20px;
 }
 
-.horizontal-container::-webkit-scrollbar {
+.full-horizontal-container::-webkit-scrollbar {
     display: none;
 }
+
 @media only screen and (max-width: 960px) {
   .section-home {
     height: 100vh !important;
