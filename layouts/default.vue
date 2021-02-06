@@ -2,7 +2,7 @@
   v-app(dark='')
     NavBar(:navItems="navItems", :socialLinks="socialLinks")
 
-    v-main
+    v-main.main
       nuxt
     Footer(:socialLinks='socialLinks')
     cursor-fx(:key="$route.fullPath")
@@ -73,5 +73,13 @@ export default {
 
   button {
     cursor: none !important;
+  }
+
+  .main {
+    height: 70vh;
+  }
+
+  .main::-webkit-scrollbar {
+    display: none;
   }
 </style>
