@@ -6,7 +6,7 @@
       .about-skill
         img(src="~/assets/about_me.jpg" width="500" data-cursor-hover data-cursor-mix-blend-mode="difference")
         .d-flex.justify-space-around
-          .about-text.col-6
+          .about-text.col-md-6.col-12
             TextHeader(:blabla="blabla")
               span(v-html="blabla.description")
       .about_summary
@@ -14,7 +14,7 @@
           .container-full-height
             img.img-full-height(src="~/assets/about_pepite.jpg" data-cursor-hover data-cursor-mix-blend-mode="difference")
         .d-flex.justify-space-around
-          .about-text.col-6
+          .about-text.col-md-6.col-12
             TextHeader(:blabla="blablaPepite")
               span(v-html="blablaPepite.description")
           //- .about-skills.col-5
@@ -56,9 +56,6 @@ export default {
         description: "une pépite par définition (au sens figuré) est une chose dont l'exceptionnelle qualité attire l'attention, un trésor. il est donc de mon devoir de faire de chacun de vos projet, une petite pépite."
       }
     }
-  },
-  mounted () {
-    console.log(this.$route.name)
   }
 }
 </script>
@@ -146,6 +143,31 @@ export default {
   .banner-img {
     max-width: 550px !important;
   }
+
+  .container-full-height {
+    overflow: unset;
+    height: 100vh;
+    margin-top: unset;
+    margin-bottom: unset;
+  }
+
+  .img-full-height {
+    transform: unset;
+    z-index: unset;
+  }
+
+  .home-container {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    height: auto;
+  }
+
+  .horizontal-container .v-image {
+    max-width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -162,6 +184,14 @@ export default {
     min-height: 55vh !important;
   }
 
+  .home-container {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .img-full-height {
+    position: relative;
+  }
 }
 
 @media only screen and (max-width: 400px) {

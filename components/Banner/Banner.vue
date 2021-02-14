@@ -39,6 +39,9 @@ export default {
   },
   computed: {
     setWidth () {
+      if (this.$vuetify.breakpoint.smAndDown) {
+        return ''
+      }
       if (!this.isMounted) {
         return 300 + 'vw'
       }
@@ -97,40 +100,89 @@ export default {
 }
 
 @media only screen and (max-width: 960px) {
-  .section-home {
-    height: 100vh !important;
-  }
-
-  .header-height {
-    width: 100% !important;
-    max-height: 50vh !important;
-  }
-
   .header {
-    margin: 50px 0 0 0;
-    max-height: 40vh !important;
+    max-height: 60vh !important;
+  }
+
+  .full-horizontal-container {
+    width: 100%;
+    height: 100%;
+    transform: unset;
+    transform-origin: unset;
+    position: relative;
+    overflow-y: unset;
+  }
+
+  .horizontal-container {
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: unset;
+    padding-left: 5vw;
+    flex-direction: column;
+    transform: unset;
+    transform-origin: unset;
+    width: 100%;
+  }
+  .about-container {
+      padding-left: unset;
+      padding-top: unset;
+      padding-bottom: unset;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+  }
+
+  .about-skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-top: unset;
+    margin-bottom: unset;
+    padding-bottom: unset;
+    padding-top: unset;
+  }
+
+  .about-skill img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .about_summary {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    overflow: unset;
+    height: 100%;
+    margin-top: unset;
+    margin-bottom: unset;
+    padding-top: unset;
+    padding-bottom: unset;
+    flex-direction: column;
   }
 }
 
 @media only screen and (max-width: 500px) {
   .header {
     margin: 20px 0 0 0;
-    max-height: 60vh !important;
   }
 
-  .header-height {
-    max-height: 40vh !important;
+  .horizontal-container {
+    height: auto;
+    padding-left: 0
   }
 }
 
 @media only screen and (max-width: 450px) {
   .header {
-    max-height: 65vh !important;
+    max-height: unset !important;
     margin: auto;
+    height: auto;
   }
 
-  .header-height {
-    max-height: 35vh !important;
+  .container-full-height {
+    height: auto;
   }
 }
 
@@ -138,10 +190,6 @@ export default {
   .header {
     max-height: 60vh !important;
     margin: auto;
-  }
-
-  .header-height {
-    max-height: 40vh !important;
   }
 }
 </style>

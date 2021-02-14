@@ -82,4 +82,10 @@ export default {
   .main::-webkit-scrollbar {
     display: none;
   }
+
+  @media only screen and (max-width: 960px) {
+    .main {
+      height: unset;
+    }
+  }
 </style>
