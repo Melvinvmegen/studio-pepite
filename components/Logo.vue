@@ -31,4 +31,10 @@ export default {
   .logo img {
     max-width: 150px;
   }
+
+  @media only screen and (max-width: 500px) {
+    .logo {
+      margin-left: 0;
+    }
+  }
 </style>

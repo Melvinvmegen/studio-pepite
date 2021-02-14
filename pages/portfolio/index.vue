@@ -88,7 +88,7 @@ export default {
   .scroll-container {
     position: relative;
     overflow: scroll;
-    z-index: 10;
+    z-index: 3;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-transform-style: preserve-3d;
