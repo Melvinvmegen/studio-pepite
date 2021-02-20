@@ -24,7 +24,7 @@
             br
             .d-flex.justify-center.align-center(:class="{'flex-column': $vuetify.breakpoint.smAndDown}")
               h3.primary--text fanny coderey
-              a.email(href="mailto:fanny.coderey@gmail.com") fanny.coderey@gmail.com
+              a.email(href="mailto:contact@studiopepite.com") contact@studiopepite.com
               .icons
                 v-btn(v-for='link in socialLinks' :key='link.id' icon='')
                   a.icon-link(:href="link.href")

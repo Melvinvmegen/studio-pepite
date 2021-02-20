@@ -14,7 +14,7 @@
                 | E-mail
               span.contact_details-separator.detail-separator
               span.contact_details-value.detail-value
-                | hello.studiopepite@gmail.com
+                | CONTACT@STUDIOPEPITE.COM
             .contact_details.detail
               span.contact_details-label.detail-label
                 | Téléphone
