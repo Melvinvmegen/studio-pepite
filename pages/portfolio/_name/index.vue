@@ -1,11 +1,11 @@
 <template lang="pug">
-  .full
-    .section-home.horizontal-container
-      BannerLeft.col-md-7.col-12(:blabla='blabla')
+  .full-horizontal-container
+    .section-home.horizontal-container(:style="{ width: setWidth }")
+      BannerLeft.col-md-2.col-12(:blabla='blabla' ref="banner_1")
       BannerRight.col-md-6.col-12(:image="blabla.img" :blabla='blabla')
-        .home-container.d-flex
+        .home-container.d-flex(ref="banner_2")
           v-img(v-for="project in blabla.projectImages" :src='require(`~/assets/${project.img}`)' width="500" height='600' data-cursor-hover data-cursor-mix-blend-mode="difference")
-        .project__next(v-if='next_project')
+        .project__next(v-if='next_project' ref="banner_3")
           nuxt-link(:to="{ name: 'portfolio-name', params: { index: index + 1, name: next_project.link }}" data-cursor-hover data-cursor-mix-blend-mode="difference" )
             h2.section__title
               | projet suivant
@@ -27,12 +27,28 @@ export default {
     return {
       blabla: null,
       next_project: null,
-      index: this.$route.params.index
+      index: this.$route.params.index,
+      isMounted: false
     }
   },
   created () {
     this.blabla = this.$store.state.projectImages[this.$route.params.index]
     this.next_project = this.$store.state.projectImages[this.$route.params.index + 1]
+  },
+  computed: {
+    setWidth () {
+      if (this.$vuetify.breakpoint.smAndDown) {
+        return ''
+      }
+      if (!this.isMounted) {
+        return 300 + 'vw'
+      }
+      const nextProject = this.$refs.banner_3 ? this.$refs.banner_3.clientWidth : 0
+      return (this.$refs.banner_1.$el.clientWidth + this.$refs.banner_2.clientWidth + nextProject) * 1.05 + 'px'
+    }
+  },
+  mounted () {
+    this.isMounted = true
   }
 }
 </script>
@@ -65,5 +81,16 @@ export default {
     position: absolute;
     left: calc(70% + 4rem);
     bottom: .5rem;
+  }
+
+  @media only screen and (max-width: 500px) {
+    .project__next {
+      padding: 5vh;
+    }
+
+    .project__next svg {
+      left: unset;
+      bottom: 3.5rem;
+    }
   }
 </style>

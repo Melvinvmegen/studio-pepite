@@ -5,7 +5,7 @@
         v-card-title.white.pl-4
           .d-flex.flex-column.align-center(:class="{'justify-center': $vuetify.breakpoint.smAndDown, 'container': $vuetify.breakpoint.smAndDown}")
             v-spacer
-            a.email(href="mailto:fanny.coderey@gmail.com" data-cursor-hover data-cursor-mix-blend-mode="difference") fanny.coderey@gmail.com
+            a.email(href="mailto:contact@studiopepite.com" data-cursor-hover data-cursor-mix-blend-mode="difference") contact@studiopepite.com
             .icons.col-2
               v-btn(v-for='link in socialLinks' :key='link.id' icon='' data-cursor-hover data-cursor-mix-blend-mode="difference")
                 a(:href="link.href")
