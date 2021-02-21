@@ -2,7 +2,7 @@
   .full-horizontal-container
     .section-home.horizontal-container(:style="{ width: setWidth }")
       BannerLeft.col-md-2.col-12(:blabla='blabla' :ctaText="ctaText" :link="link" ref="banner_1")
-      BannerRight(:image="image" :blabla='blabla' ref="banner_2")
+      BannerRight.col-md-8(:image="image" :blabla='blabla' ref="banner_2")
 </template>
 
 <script>
@@ -45,7 +45,7 @@ export default {
       if (!this.isMounted) {
         return 300 + 'vw'
       }
-      return (this.$refs.banner_1.$el.clientWidth + this.$refs.banner_2.$el.clientWidth) * 1.1 + 'px'
+      return (this.$refs.banner_1.$el.clientWidth + this.$refs.banner_2.$el.clientWidth) + 'px'
     }
   },
   mounted () {
@@ -77,7 +77,6 @@ export default {
   margin: 0;
   top: 0;
   left: 0;
-  padding-top: 1px;
 }
 
 .horizontal-container {
@@ -89,6 +88,7 @@ export default {
   transform: rotate(90deg) translateY(-100vh);
   transform-origin: top left;
   width: 400vw;
+  padding-top: 15vh;
 }
 
 .horizontal-container .v-image {
@@ -124,12 +124,12 @@ export default {
     width: 100%;
   }
   .about-container {
-      padding-left: unset;
-      padding-top: unset;
-      padding-bottom: unset;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
+    padding-left: unset;
+    padding-top: unset;
+    padding-bottom: unset;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   .about-skill {

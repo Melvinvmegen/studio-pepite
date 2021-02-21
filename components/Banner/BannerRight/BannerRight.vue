@@ -10,10 +10,10 @@
             TextHeader(:blabla="blabla")
               span(v-html="blabla.description")
       .about_summary
-        .summary-img
+        .summary-img.col-md-4
           .container-full-height
             img.img-full-height(src="~/assets/about_pepite.jpg" data-cursor-hover data-cursor-mix-blend-mode="difference")
-        .d-flex.justify-space-around
+        .d-flex.justify-space-around.col-md-8
           .about-text.col-md-6.col-12
             TextHeader(:blabla="blablaPepite")
               span(v-html="blablaPepite.description")
@@ -77,10 +77,10 @@ export default {
 
 .about-container {
   padding-left: 10vw;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
   height: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .home-container {
@@ -89,14 +89,9 @@ export default {
 
 .about_summary {
   display: inline-flex;
-  width: 100vw;
   align-items: center;
   overflow: hidden;
   height: 100vh;
-  margin-top: -25vh;
-  margin-bottom: -25vh;
-  padding-top: 25vh;
-  padding-bottom: 25vh;
 }
 
 .about-skill {
@@ -105,10 +100,6 @@ export default {
   align-items: center;
   height: 100vh;
   width: 100vw;
-  margin-top: -25vh;
-  margin-bottom: -25vh;
-  padding-bottom: 25vh;
-  padding-top: 25vh;
 }
 
 .container-full-height {
@@ -133,10 +124,6 @@ export default {
   max-height: none;
   z-index: 99999;
   width: 100%;
-}
-
-.summary-img {
-  min-width: 45vh;
 }
 
 @media only screen and (max-width: 960px) {
