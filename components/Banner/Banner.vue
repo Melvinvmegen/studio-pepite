@@ -2,7 +2,7 @@
   .full-horizontal-container
     .section-home.horizontal-container(:style="{ width: setWidth }")
       BannerLeft.col-md-2.col-12(:blabla='blabla' :ctaText="ctaText" :link="link" ref="banner_1")
-      BannerRight.col-md-8(:image="image" :blabla='blabla' ref="banner_2")
+      BannerRight.col-md-8(:image="image" :projectImages='blabla.projectImages' ref="banner_2")
 </template>
 
 <script>
@@ -96,14 +96,14 @@ export default {
 }
 
 .full-horizontal-container::-webkit-scrollbar {
-    display: none;
+  display: none;
+}
+
+.horizontal-container::-webkit-scrollbar {
+  display: none;
 }
 
 @media only screen and (max-width: 960px) {
-  .header {
-    max-height: 60vh !important;
-  }
-
   .full-horizontal-container {
     width: 100%;
     height: 100%;
@@ -122,6 +122,7 @@ export default {
     transform: unset;
     transform-origin: unset;
     width: 100%;
+    padding-top: 0;
   }
   .about-container {
     padding-left: unset;
@@ -166,6 +167,7 @@ export default {
 @media only screen and (max-width: 500px) {
   .header {
     margin: 20px 0 0 0;
+    padding-top: 100px;
   }
 
   .horizontal-container {
@@ -178,7 +180,6 @@ export default {
   .header {
     max-height: unset !important;
     margin: auto;
-    height: auto;
   }
 
   .container-full-height {

@@ -1,12 +1,13 @@
 <template lang="pug">
-  .header-right
+  .header-right.flex-md-row.flex-column
     .home-container.d-flex(v-if="$route.name === 'index'")
-      v-img(v-for="n in 6" :src='require(`~/assets/project_${n}.jpg`)' width="500" height="600" data-cursor-hover data-cursor-mix-blend-mode="difference")
+      nuxt-link(v-for="(projectImage, index) in projectImages"  :to="{ name: 'portfolio-name', params: { index: index, name: projectImage.link, project: projectImage, next_project: projectImages[index + 1] }}")
+        v-img(:src='require(`~/assets/${projectImage.src}`)' :title='projectImage.title' :href='projectImage.link' width="500" height="600" data-cursor-hover data-cursor-mix-blend-mode="difference")
     .about-container(v-if="$route.name === 'about'")
       .about-skill
         img(src="~/assets/about_me.jpg" width="500" data-cursor-hover data-cursor-mix-blend-mode="difference")
         .d-flex.justify-space-around
-          .about-text.col-md-6.col-12
+          .about-text.col-md-8.col-12
             TextHeader(:blabla="blabla")
               span(v-html="blabla.description")
       .about_summary
@@ -14,7 +15,7 @@
           .container-full-height
             img.img-full-height(src="~/assets/about_pepite.jpg" data-cursor-hover data-cursor-mix-blend-mode="difference")
         .d-flex.justify-space-around.col-md-8
-          .about-text.col-md-6.col-12
+          .about-text.col-md-8.col-12
             TextHeader(:blabla="blablaPepite")
               span(v-html="blablaPepite.description")
           //- .about-skills.col-5
@@ -42,6 +43,10 @@ export default {
   props: {
     image: {
       type: String,
+      default: null
+    },
+    projectImages: {
+      type: Array,
       default: null
     }
   },
@@ -136,11 +141,14 @@ export default {
     height: 100vh;
     margin-top: unset;
     margin-bottom: unset;
+    height: 45vh;
   }
 
   .img-full-height {
     transform: unset;
     z-index: unset;
+    object-fit: contain;
+    min-height: unset;
   }
 
   .home-container {
@@ -152,8 +160,9 @@ export default {
 
   .horizontal-container .v-image {
     max-width: 100%;
-    height: auto;
+    height: auto !important;
     margin-top: 10px;
+    width: auto !important;
   }
 }
 
