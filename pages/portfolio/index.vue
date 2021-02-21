@@ -38,7 +38,7 @@ export default {
         {
           title: 'l’antre de l’artiste',
           link: 'l’antre-de-l’artiste',
-          src: 'project_2.jpg'
+          src: 'ARTISTE.jpeg'
         },
         {
           title: 'la théorie du jeu',
@@ -51,6 +51,16 @@ export default {
           src: 'project_3.jpg'
         },
         {
+          title: 'maison p',
+          link: 'maison-p',
+          src: 'PICON.jpeg'
+        },
+        {
+          title: 'appartement lillois',
+          link: 'appartement-lillois',
+          src: 'LILLE.jpeg'
+        },
+        {
           title: 'jacquemus',
           link: 'jacquemus',
           src: 'project_4.jpg'
@@ -61,7 +71,7 @@ export default {
           src: 'project_8.jpg'
         },
         {
-          title: 'Jimi Hendrix',
+          title: 'jimi Hendrix',
           link: 'jimi-Hendrix',
           src: 'project_5.jpg'
         },

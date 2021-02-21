@@ -14,7 +14,7 @@ export const state = () => ({
     {
       title: 'l’antre de l’artiste',
       link: 'antre-de-l’artiste',
-      src: 'project_1.jpg',
+      src: 'ARTISTE.jpeg',
       description: `projet en freelance de transformation d’un vielle appartement en bureau / atelier. désir de créer un lieu à l’identité 
             industrielle et actuel en gardant une âme rétro.`,
       projectImages: [
@@ -67,6 +67,29 @@ export const state = () => ({
       ]
     },
     {
+      title: 'maison p',
+      link: 'maison-p',
+      src: 'PICON.jpeg',
+      description: "transformation d'une cuisine et salle à manger en chambre d'ami avec salle d'eau et dressing.",
+      projectImages: [
+        { img: 'maison_p/CH_1.jpeg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' },
+        { img: 'maison_p/CH_2.jpeg', title: "Mise en place d'un hub de blog avec module de recherche d'article." },
+        { img: 'maison_p/VUE_GENERALE.jpeg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' }
+      ]
+    },
+    {
+      title: 'appartement lillois',
+      link: 'appartement-lillois',
+      src: 'LILLE.jpeg',
+      description: "Rénovation complète d'un vieil appartement haussmannien d'environ 60 mœ. L'objectif était de replacer les pièces selon une disposition précise et pratique. Il s'agissait également de créer un dressing et une cuisine avec un ilot, entièrement ouverte sur le salon. ",
+      projectImages: [
+        { img: 'appartement_lillois/SALON1.jpeg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' },
+        { img: 'appartement_lillois/SALON2.jpeg', title: "Mise en place d'un hub de blog avec module de recherche d'article." },
+        { img: 'appartement_lillois/SDB.jpeg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
+        { img: 'appartement_lillois/VUE_GENERALE.jpeg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' }
+      ]
+    },
+    {
       title: 'jacquemus',
       link: 'jacquemus',
       src: 'project_4.jpg',
@@ -109,11 +132,12 @@ export const state = () => ({
             dans le troisième arrondissement. l’appartement est déstiné à la location pour une petite famille. aménagement d’espaces verts 
             dans le salon et sur la terrasse. technique de définition des espaces par la couleurs.`,
       projectImages: [
-        { img: 'project_1.jpg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' },
-        { img: 'project_1.jpg', title: "Mise en place d'un hub de blog avec module de recherche d'article." },
-        { img: 'project_1.jpg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
-        { img: 'project_1.jpg', title: 'Classement des meilleurs ostéopathes par ville en fonction de leurs notations.' },
-        { img: 'project_1.jpg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' }
+        { img: 'jimi_hendrix/BALCON.jpeg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' },
+        { img: 'jimi_hendrix/CH.jpeg', title: "Mise en place d'un hub de blog avec module de recherche d'article." },
+        { img: 'jimi_hendrix/COULOIR.jpeg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
+        { img: 'jimi_hendrix/CUISINE_1.jpeg', title: 'Classement des meilleurs ostéopathes par ville en fonction de leurs notations.' },
+        { img: 'jimi_hendrix/CUISINE_2.jpeg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' },
+        { img: 'jimi_hendrix/VUE_DESSUS.jpeg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' }
       ]
     },
     {
