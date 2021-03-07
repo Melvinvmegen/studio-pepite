@@ -16,10 +16,9 @@
         br
         v-list(nav='' dense='')
           v-list-item-group
-            v-list-item.nav-anim(v-for='item in navItems' :key='item.title' two-line exact)
-              nuxt-link(:to="{name: item.link}")
-                v-list-item-content
-                  v-list-item-title.ml-4 {{ item.title }}
+            v-list-item.nav-anim(v-for='item in navItems' :key='item.title' two-line exact :to="{name: item.link}")
+              v-list-item-content
+                v-list-item-title.ml-4 {{ item.title }}
             v-divider
             br
             .d-flex.justify-center.align-center(:class="{'flex-column': $vuetify.breakpoint.smAndDown}")
