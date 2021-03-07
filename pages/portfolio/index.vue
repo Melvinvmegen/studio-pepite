@@ -137,4 +137,11 @@ export default {
   .v-card .v-card__title {
     padding: 16px 0;
   }
+
+  @media only screen and (max-width: 500px) {
+    .portfolio-container {
+      padding-top: 0;
+      height: auto;
+    }
+  }
 </style>
