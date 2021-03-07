@@ -1,7 +1,7 @@
 <template lang="pug">
   .full
     .d-flex.contact-container.flex-column.flex-md-row
-      .contact_content.col-lg-5.col-md-7.col-10
+      .contact_content.col-lg-6.col-md-7.col-10
         .col-md-9.col-12
           h1.contact_title
             | contact
@@ -141,6 +141,10 @@ export default {
     .detail-value {
       padding-left: 0 !important;
       width: 100% !important;
+    }
+
+    .full {
+      padding: 0;
     }
   }
 

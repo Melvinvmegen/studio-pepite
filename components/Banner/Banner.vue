@@ -170,7 +170,8 @@ export default {
 @media only screen and (max-width: 500px) {
   .header {
     margin: 20px 0 0 0;
-    padding-top: 100px;
+    padding-top: 10px;
+    background-position: unset;
   }
 
   .horizontal-container {

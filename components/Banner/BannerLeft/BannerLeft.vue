@@ -1,6 +1,6 @@
 <template lang="pug">
   .header(:style="{ backgroundImage: 'url(' + require(`@/assets/pepite.png`) + ')' }")
-    v-container.col-12.pa-0.justify-center.d-flex.align-center
+    v-container.col-12.pa-md-0.justify-center.d-flex.align-center
       TextHeader(:blabla="blabla")
         span(v-html="blabla.description")
         CTA(v-if="ctaText && link" :className="true" color="accent" :text="ctaText" :link="link")

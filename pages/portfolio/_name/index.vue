@@ -1,9 +1,9 @@
 <template lang="pug">
   .full-horizontal-container
     .section-home.horizontal-container(:style="{ width: setWidth }")
-      BannerLeft.col-md-2.col-12.pa-0(:blabla='blabla' ref="banner_1")
+      BannerLeft.col-md-2.col-12.pa-md-0(:blabla='blabla' ref="banner_1")
       .col-md-1.col-0.w-10vw
-      BannerRight.col-md-6.col-12.pa-0(:image="blabla.img" :blabla='blabla')
+      BannerRight.col-md-6.col-12.pa-md-0(:image="blabla.img" :blabla='blabla')
         .home-container.d-flex.justify-center.align-center(ref="banner_2")
           v-img(v-for="project in blabla.projectImages" :src='require(`~/assets/${project.img}`)' width="500" height='600' data-cursor-hover data-cursor-mix-blend-mode="difference")
         .project__next(v-if='next_project' ref="banner_3")
@@ -55,7 +55,6 @@ export default {
 </script>
 
 <style scoped>
-
   .w-10vw {
     max-width: 10vw;
   }
@@ -96,7 +95,7 @@ export default {
 
     .project__next svg {
       left: unset;
-      bottom: 3.5rem;
+      bottom: 1rem;
     }
   }
 </style>

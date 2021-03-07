@@ -2,7 +2,7 @@
   v-app(dark='')
     NavBar(:navItems="navItems", :socialLinks="socialLinks")
 
-    v-main.main.pa-0
+    v-main.main.pa-md-0
       nuxt
     Footer(:socialLinks='socialLinks')
     cursor-fx(:key="$route.fullPath")
