@@ -3,7 +3,7 @@
     .section-home.horizontal-container(:style="{ width: setWidth }")
       BannerLeft.col-md-2.col-12(:blabla='blabla' ref="banner_1")
       BannerRight.col-md-6.col-12(:image="blabla.img" :blabla='blabla')
-        .home-container.d-flex(ref="banner_2")
+        .home-container.d-flex.justify-center.align-center(ref="banner_2")
           v-img(v-for="project in blabla.projectImages" :src='require(`~/assets/${project.img}`)' width="500" height='600' data-cursor-hover data-cursor-mix-blend-mode="difference")
         .project__next(v-if='next_project' ref="banner_3")
           nuxt-link(:to="{ name: 'portfolio-name', params: { index: index + 1, name: next_project.link }}" data-cursor-hover data-cursor-mix-blend-mode="difference" )
@@ -44,7 +44,7 @@ export default {
         return 300 + 'vw'
       }
       const nextProject = this.$refs.banner_3 ? this.$refs.banner_3.clientWidth : 0
-      return (this.$refs.banner_1.$el.clientWidth + this.$refs.banner_2.clientWidth + nextProject) * 1.05 + 'px'
+      return (this.$refs.banner_1.$el.clientWidth + this.$refs.banner_2.clientWidth + nextProject) * 1.1 + 'px'
     }
   },
   mounted () {
