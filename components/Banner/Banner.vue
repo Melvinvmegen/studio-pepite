@@ -83,7 +83,7 @@ export default {
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
-  padding-left: 12vw;
+  padding-left: 4vw;
   flex-direction: row;
   transform: rotate(90deg) translateY(-100vh);
   transform-origin: top left;
@@ -117,7 +117,6 @@ export default {
     display: flex;
     overflow-x: hidden;
     overflow-y: unset;
-    padding-left: 5vw;
     flex-direction: column;
     transform: unset;
     transform-origin: unset;
@@ -161,6 +160,10 @@ export default {
     padding-top: unset;
     padding-bottom: unset;
     flex-direction: column;
+  }
+
+  .horizontal-container .v-image {
+    margin: 10px 0;
   }
 }
 
