@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-app-bar.white(app='' fixed elevate-on-scroll height="100")
+  v-app-bar.white(app='' fixed elevate-on-scroll height="70")
     .col-12.d-flex.justify-space-between.align-center.header-container
       .d-flex.align-center.main-header-left
         nuxt-link(:to="{path: '/'}")
@@ -16,10 +16,9 @@
         br
         v-list(nav='' dense='')
           v-list-item-group
-            v-list-item.nav-anim(v-for='item in navItems' :key='item.title' two-line exact)
-              nuxt-link(:to="{name: item.link}")
-                v-list-item-content
-                  v-list-item-title.ml-4 {{ item.title }}
+            v-list-item.nav-anim(v-for='item in navItems' :key='item.title' two-line exact :to="{name: item.link}")
+              v-list-item-content
+                v-list-item-title.ml-4 {{ item.title }}
             v-divider
             br
             .d-flex.justify-center.align-center(:class="{'flex-column': $vuetify.breakpoint.smAndDown}")
@@ -112,6 +111,7 @@ aside .v-navigation-drawer__content {
   height: 100%;
   align-items: center;
   font-size: 14px;
+  padding: 0;
 }
 
 /* NAVANIM */

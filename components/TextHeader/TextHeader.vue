@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-container(:class="{'align-center': $vuetify.breakpoint.smAndDown}")
+  v-container.pa-md-0(:class="{'align-center': $vuetify.breakpoint.smAndDown}")
     h2(:class="{ 'primary-border': color, 'white--text': white }" v-html="blabla.title")
     br
     slot

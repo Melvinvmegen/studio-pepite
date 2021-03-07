@@ -71,8 +71,8 @@ export default {
           src: 'project_8.jpg'
         },
         {
-          title: 'jimi Hendrix',
-          link: 'jimi-Hendrix',
+          title: 'jimi hendrix',
+          link: 'jimi-hendrix',
           src: 'project_5.jpg'
         },
         {
@@ -136,5 +136,18 @@ export default {
 
   .v-card .v-card__title {
     padding: 16px 0;
+  }
+
+  @media only screen and (max-width: 500px) {
+    .portfolio-container {
+      padding-top: 0;
+      height: auto;
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+
+    .full {
+      padding-top: 30px;
+    }
   }
 </style>

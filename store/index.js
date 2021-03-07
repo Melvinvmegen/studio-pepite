@@ -60,10 +60,7 @@ export const state = () => ({
         { img: 'retrorama/retrorama_3.jpg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
         { img: 'retrorama/retrorama_4.jpg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
         { img: 'retrorama/retrorama_5.jpg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
-        { img: 'retrorama/retrorama_6.jpg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
-        { img: 'retrorama/r+1 zooning.png', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
-        { img: 'retrorama/sous sol zooning copie.png', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
-        { img: 'retrorama/zooning rdc.png', title: 'Representation graphique de statistiques avec les éléments nécessaires.' }
+        { img: 'retrorama/retrorama_6.jpg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' }
       ]
     },
     {
@@ -124,8 +121,8 @@ export const state = () => ({
       ]
     },
     {
-      title: 'jimi Hendrix',
-      link: 'jimi Hendrix',
+      title: 'jimi hendrix',
+      link: 'jimi hendrix',
       src: 'project_5.jpg',
       description: `conception d’un lieu chaleureux dans lequel les clients peuvent se projeter. utilisation d’une oeuvre d’art représentant jimi 
             hendrix par thomas krief. projet (réalisé en freelance) d’aménagement d’un appartement acquis en vefa. <br><br>l’appartement se situe à lyon, 
@@ -149,15 +146,11 @@ export const state = () => ({
             de matériaux nobles (cuivre, pierre, bois, pièces d’art...). logiciels utilisés pour la réalisation de ce projet : 
             autocad, sketchup, excel.`,
       projectImages: [
-        { img: 'revival/GABARIT PHOTOS3.jpg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' },
-        { img: 'revival/GABARIT PHOTOS4.jpg', title: "Mise en place d'un hub de blog avec module de recherche d'article." },
         { img: 'revival/GABARIT PHOTOS5.jpg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
         { img: 'revival/GABARIT PHOTOS6.jpg', title: 'Classement des meilleurs ostéopathes par ville en fonction de leurs notations.' },
-        { img: 'revival/GABARIT PHOTOS7.jpg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' },
         { img: 'revival/GABARIT PHOTOS8.jpg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' },
         { img: 'revival/GABARIT PHOTOS9.jpg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' },
-        { img: 'revival/GABARIT PHOTOS10.jpg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' },
-        { img: 'revival/GABARIT PHOTOS11.jpg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' }
+        { img: 'revival/GABARIT PHOTOS10.jpg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' }
       ]
     },
     {

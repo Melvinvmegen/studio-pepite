@@ -83,7 +83,7 @@ export default {
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
-  padding-left: 12vw;
+  padding-left: 10vw;
   flex-direction: row;
   transform: rotate(90deg) translateY(-100vh);
   transform-origin: top left;
@@ -117,12 +117,13 @@ export default {
     display: flex;
     overflow-x: hidden;
     overflow-y: unset;
-    padding-left: 5vw;
     flex-direction: column;
     transform: unset;
     transform-origin: unset;
     width: 100%;
     padding-top: 0;
+    padding-left: 0;
+    height: auto;
   }
   .about-container {
     padding-left: unset;
@@ -162,14 +163,19 @@ export default {
     padding-bottom: unset;
     flex-direction: column;
   }
+
+  .horizontal-container .v-image {
+    margin: 10px 0;
+  }
+
+  .header {
+    margin: 20px 0 0 0;
+    padding-top: 10px;
+    background-position: unset;
+  }
 }
 
 @media only screen and (max-width: 500px) {
-  .header {
-    margin: 20px 0 0 0;
-    padding-top: 100px;
-  }
-
   .horizontal-container {
     height: auto;
     padding-left: 0
