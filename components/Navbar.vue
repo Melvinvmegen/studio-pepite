@@ -112,6 +112,7 @@ aside .v-navigation-drawer__content {
   height: 100%;
   align-items: center;
   font-size: 14px;
+  padding: 0;
 }
 
 /* NAVANIM */
