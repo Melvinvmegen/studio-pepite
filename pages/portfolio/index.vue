@@ -71,8 +71,8 @@ export default {
           src: 'project_8.jpg'
         },
         {
-          title: 'jimi Hendrix',
-          link: 'jimi-Hendrix',
+          title: 'jimi hendrix',
+          link: 'jimi-hendrix',
           src: 'project_5.jpg'
         },
         {

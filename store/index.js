@@ -124,8 +124,8 @@ export const state = () => ({
       ]
     },
     {
-      title: 'jimi Hendrix',
-      link: 'jimi Hendrix',
+      title: 'jimi hendrix',
+      link: 'jimi hendrix',
       src: 'project_5.jpg',
       description: `conception d’un lieu chaleureux dans lequel les clients peuvent se projeter. utilisation d’une oeuvre d’art représentant jimi 
             hendrix par thomas krief. projet (réalisé en freelance) d’aménagement d’un appartement acquis en vefa. <br><br>l’appartement se situe à lyon, 

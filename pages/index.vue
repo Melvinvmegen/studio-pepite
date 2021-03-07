@@ -13,7 +13,7 @@ export default {
   data () {
     return {
       blabla: {
-        title: 'bonjour, je m’appelle Fanny et j’ai créé pépite <br> pour vous en faire voir de toutes les couleurs',
+        title: 'bonjour, je m’appelle fanny et j’ai créé pépite <br> pour vous en faire voir de toutes les couleurs',
         description: '',
         projectImages: [
           {
@@ -57,8 +57,8 @@ export default {
             src: 'project_8.jpg'
           },
           {
-            title: 'jimi Hendrix',
-            link: 'jimi-Hendrix',
+            title: 'jimi hendrix',
+            link: 'jimi-hendrix',
             src: 'project_5.jpg'
           },
           {

@@ -23,7 +23,7 @@ export default {
   data () {
     return {
       navItems: [
-        { id: 1, title: 'a propos', link: 'about' },
+        { id: 1, title: 'à propos', link: 'about' },
         { id: 2, title: 'portfolio', link: 'portfolio' },
         { id: 3, title: 'contact', link: 'contact' }
       ],
