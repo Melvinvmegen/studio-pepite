@@ -142,6 +142,12 @@ export default {
     .portfolio-container {
       padding-top: 0;
       height: auto;
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+
+    .full {
+      padding-top: 30px;
     }
   }
 </style>
