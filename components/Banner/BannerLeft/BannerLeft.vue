@@ -1,5 +1,5 @@
 <template lang="pug">
-  .header
+  .header(:style="{ backgroundImage: 'url(' + require(`@/assets/pepite.png`) + ')' }")
     v-container.col-12.pa-0.justify-center.d-flex.align-center
       TextHeader(:blabla="blabla")
         span(v-html="blabla.description")
@@ -42,6 +42,7 @@ export default {
   flex-direction: column;
   align-items: center;
   height: 100%;
+  background-position: center center;
 }
 
 .cta-wrapper-home {
