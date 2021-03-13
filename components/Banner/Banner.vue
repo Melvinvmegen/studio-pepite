@@ -2,7 +2,7 @@
   .full-horizontal-container
     .section-home.horizontal-container(:style="{ width: setWidth }")
       BannerLeft.col-md-2.col-12(:blabla='blabla' :ctaText="ctaText" :link="link" ref="banner_1")
-      BannerRight(:image="image" :blabla='blabla' ref="banner_2")
+      BannerRight.col-md-8(:image="image" :projectImages='blabla.projectImages' ref="banner_2")
 </template>
 
 <script>
@@ -39,10 +39,13 @@ export default {
   },
   computed: {
     setWidth () {
+      if (this.$vuetify.breakpoint.smAndDown) {
+        return ''
+      }
       if (!this.isMounted) {
         return 300 + 'vw'
       }
-      return (this.$refs.banner_1.$el.clientWidth + this.$refs.banner_2.$el.clientWidth) * 1.1 + 'px'
+      return (this.$refs.banner_1.$el.clientWidth + this.$refs.banner_2.$el.clientWidth) + 'px'
     }
   },
   mounted () {
@@ -74,18 +77,18 @@ export default {
   margin: 0;
   top: 0;
   left: 0;
-  padding-top: 1px;
 }
 
 .horizontal-container {
   display: flex;
   overflow-x: auto;
   overflow-y: hidden;
-  padding-left: 12vw;
+  padding-left: 10vw;
   flex-direction: row;
   transform: rotate(90deg) translateY(-100vh);
   transform-origin: top left;
   width: 400vw;
+  padding-top: 15vh;
 }
 
 .horizontal-container .v-image {
@@ -93,44 +96,100 @@ export default {
 }
 
 .full-horizontal-container::-webkit-scrollbar {
-    display: none;
+  display: none;
+}
+
+.horizontal-container::-webkit-scrollbar {
+  display: none;
 }
 
 @media only screen and (max-width: 960px) {
-  .section-home {
-    height: 100vh !important;
+  .full-horizontal-container {
+    width: 100%;
+    height: 100%;
+    transform: unset;
+    transform-origin: unset;
+    position: relative;
+    overflow-y: unset;
   }
 
-  .header-height {
-    width: 100% !important;
-    max-height: 50vh !important;
+  .horizontal-container {
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: unset;
+    flex-direction: column;
+    transform: unset;
+    transform-origin: unset;
+    width: 100%;
+    padding-top: 0;
+    padding-left: 0;
+    height: auto;
+  }
+  .about-container {
+    padding-left: unset;
+    padding-top: unset;
+    padding-bottom: unset;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin-top: unset;
+    margin-bottom: unset;
+    padding-bottom: unset;
+    padding-top: unset;
+  }
+
+  .about-skill img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .about_summary {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    overflow: unset;
+    height: 100%;
+    margin-top: unset;
+    margin-bottom: unset;
+    padding-top: unset;
+    padding-bottom: unset;
+    flex-direction: column;
+  }
+
+  .horizontal-container .v-image {
+    margin: 10px 0;
   }
 
   .header {
-    margin: 50px 0 0 0;
-    max-height: 40vh !important;
+    margin: 20px 0 0 0;
+    padding-top: 10px;
+    background-position: unset;
   }
 }
 
 @media only screen and (max-width: 500px) {
-  .header {
-    margin: 20px 0 0 0;
-    max-height: 60vh !important;
-  }
-
-  .header-height {
-    max-height: 40vh !important;
+  .horizontal-container {
+    height: auto;
+    padding-left: 0
   }
 }
 
 @media only screen and (max-width: 450px) {
   .header {
-    max-height: 65vh !important;
+    max-height: unset !important;
     margin: auto;
   }
 
-  .header-height {
-    max-height: 35vh !important;
+  .container-full-height {
+    height: auto;
   }
 }
 
@@ -138,10 +197,6 @@ export default {
   .header {
     max-height: 60vh !important;
     margin: auto;
-  }
-
-  .header-height {
-    max-height: 40vh !important;
   }
 }
 </style>

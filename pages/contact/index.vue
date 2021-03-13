@@ -1,8 +1,8 @@
 <template lang="pug">
   .full
-    .d-flex.contact-container
-      .contact_content.col-5
-        .contact_content-wrap
+    .d-flex.contact-container.flex-column.flex-md-row
+      .contact_content.col-lg-6.col-md-7.col-10
+        .col-md-9.col-12
           h1.contact_title
             | contact
           .contact_text
@@ -14,14 +14,14 @@
                 | E-mail
               span.contact_details-separator.detail-separator
               span.contact_details-value.detail-value
-                | hello.studiopepite@gmail.com
+                | CONTACT@STUDIOPEPITE.COM
             .contact_details.detail
               span.contact_details-label.detail-label
                 | Téléphone
               span.contact_details-separator.detail-separator
               span.contact_details-value.detail-value
                 | +33 6 68 37 49 80
-      .contact-img.col-6
+      .contact-img.col-6.d-flex.justify-center
         img.d-flex.justify-center.img-contact(src="~/assets/contact.jpg" width="550" data-cursor-hover data-cursor-mix-blend-mode="difference")
 
 </template>
@@ -56,11 +56,6 @@ export default {
     padding: 25vh 0;
     align-items: center;
     height: 73vh;
-  }
-
-  .contact_content-wrap {
-    width: 75%;
-    max-width: 100%;
   }
 
   .contact_title {
@@ -114,4 +109,43 @@ export default {
   .img-contact {
     margin: auto;
   }
+
+  @media only screen and (max-width: 960px) {
+    .contact-container {
+      padding: 5vh 0;
+    }
+    .contact_content {
+      padding: 0;
+      max-height: 40%;
+    }
+
+    .img-contact {
+      object-fit: contain;
+      height: 500px;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .contact_content {
+      max-height: 50%;
+    }
+
+    .contact-img {
+      max-height: 50%;
+    }
+
+    .img-contact {
+      height: 400px;
+    }
+
+    .detail-value {
+      padding-left: 0 !important;
+      width: 100% !important;
+    }
+
+    .full {
+      padding: 0;
+    }
+  }
+
 </style>

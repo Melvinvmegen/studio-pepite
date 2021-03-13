@@ -33,50 +33,57 @@ export default {
         {
           title: 'le bioclimatique en co-living',
           link: 'le-bioclimatique-en-co-living',
-          src: 'project_1.jpg',
-          desc: 'Lorem Ipsum Lorem Ipsum'
+          src: 'project_1.jpg'
+        },
+        {
+          title: 'l’antre de l’artiste',
+          link: 'l’antre-de-l’artiste',
+          src: 'ARTISTE.jpeg'
         },
         {
           title: 'la théorie du jeu',
           link: 'la-théorie-du-jeu',
-          src: 'project_2.jpg',
-          desc: 'Lorem Ipsum Lorem Ipsum'
+          src: 'project_2.jpg'
         },
         {
           title: 'retrorama',
           link: 'retrorama',
-          src: 'project_3.jpg',
-          desc: 'Lorem Ipsum Lorem Ipsum'
+          src: 'project_3.jpg'
+        },
+        {
+          title: 'maison p',
+          link: 'maison-p',
+          src: 'PICON.jpeg'
+        },
+        {
+          title: 'appartement lillois',
+          link: 'appartement-lillois',
+          src: 'LILLE.jpeg'
         },
         {
           title: 'jacquemus',
           link: 'jacquemus',
-          src: 'project_4.jpg',
-          desc: 'Lorem Ipsum Lorem Ipsum'
+          src: 'project_4.jpg'
         },
         {
           title: 'dumbo stairs',
           link: 'dumbo-stairs',
-          src: 'project_8.jpg',
-          desc: 'Lorem Ipsum Lorem Ipsum'
+          src: 'project_8.jpg'
         },
         {
-          title: 'bubble',
-          link: 'bubble',
-          src: 'project_5.jpg',
-          desc: 'Lorem Ipsum Lorem Ipsum'
+          title: 'jimi hendrix',
+          link: 'jimi-hendrix',
+          src: 'project_5.jpg'
         },
         {
           title: 'revival',
           link: 'revival',
-          src: 'project_6.jpg',
-          desc: 'Lorem Ipsum Lorem Ipsum'
+          src: 'project_6.jpg'
         },
         {
           title: 'miro x mondrian',
           link: 'miro-x-mondrian',
-          src: 'project_7.jpg',
-          desc: 'Lorem Ipsum Lorem Ipsum'
+          src: 'project_7.jpg'
         }
       ]
     }
@@ -88,7 +95,7 @@ export default {
   .scroll-container {
     position: relative;
     overflow: scroll;
-    z-index: 10;
+    z-index: 3;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-transform-style: preserve-3d;
@@ -129,5 +136,18 @@ export default {
 
   .v-card .v-card__title {
     padding: 16px 0;
+  }
+
+  @media only screen and (max-width: 500px) {
+    .portfolio-container {
+      padding-top: 0;
+      height: auto;
+      padding-left: 10vw;
+      padding-right: 10vw;
+    }
+
+    .full {
+      padding-top: 30px;
+    }
   }
 </style>

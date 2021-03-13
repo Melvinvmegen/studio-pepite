@@ -1,20 +1,21 @@
 <template lang="pug">
-  .header-right
-    .home-container.d-flex(v-if="$route.name === 'index'")
-      v-img(v-for="n in 6" :src='require(`~/assets/project_${n}.jpg`)' width="500" height="600" data-cursor-hover data-cursor-mix-blend-mode="difference")
+  .header-right.flex-md-row.flex-column
+    .home-container.d-flex.justify-center.align-center(v-if="$route.name === 'index'")
+      nuxt-link(v-for="(projectImage, index) in projectImages"  :to="{ name: 'portfolio-name', params: { index: index, name: projectImage.link, project: projectImage, next_project: projectImages[index + 1] }}")
+        v-img(:src='require(`~/assets/${projectImage.src}`)' :title='projectImage.title' :href='projectImage.link' width="500" height="600" data-cursor-hover data-cursor-mix-blend-mode="difference")
     .about-container(v-if="$route.name === 'about'")
       .about-skill
         img(src="~/assets/about_me.jpg" width="500" data-cursor-hover data-cursor-mix-blend-mode="difference")
         .d-flex.justify-space-around
-          .about-text.col-6
+          .about-text.col-md-8.col-12
             TextHeader(:blabla="blabla")
               span(v-html="blabla.description")
       .about_summary
-        .summary-img
+        .summary-img.col-md-4
           .container-full-height
             img.img-full-height(src="~/assets/about_pepite.jpg" data-cursor-hover data-cursor-mix-blend-mode="difference")
-        .d-flex.justify-space-around
-          .about-text.col-6
+        .d-flex.justify-space-around.col-md-8
+          .about-text.col-md-8.col-12
             TextHeader(:blabla="blablaPepite")
               span(v-html="blablaPepite.description")
           //- .about-skills.col-5
@@ -28,6 +29,15 @@
           //-       | interior design for architecture/developers
           //-     li(style='transform: translate(0px, 0px); opacity: 1;')
           //-       | vr visualization tours
+    .project__next(ref="banner_3" v-if="$route.name === 'about'")
+      nuxt-link(to="/portfolio" data-cursor-hover data-cursor-mix-blend-mode="difference" )
+        h2.section__title
+          | découvrez
+        h3.project__title
+          | mon portfolio
+        svg(width='58' height='12' xmlns='http://www.w3.org/2000/svg')
+          path(d='M48.31.82L57.52 6l-9.21 5.18-.49-.87L54.59 6.5H.5v-1h54.091l-6.772-3.81.49-.87z' fill='#030303')
+
     slot
 
 </template>
@@ -43,6 +53,10 @@ export default {
     image: {
       type: String,
       default: null
+    },
+    projectImages: {
+      type: Array,
+      default: null
     }
   },
   data () {
@@ -56,9 +70,6 @@ export default {
         description: "une pépite par définition (au sens figuré) est une chose dont l'exceptionnelle qualité attire l'attention, un trésor. il est donc de mon devoir de faire de chacun de vos projet, une petite pépite."
       }
     }
-  },
-  mounted () {
-    console.log(this.$route.name)
   }
 }
 </script>
@@ -80,10 +91,10 @@ export default {
 
 .about-container {
   padding-left: 10vw;
-  padding-top: 10vh;
-  padding-bottom: 10vh;
   height: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .home-container {
@@ -92,14 +103,9 @@ export default {
 
 .about_summary {
   display: inline-flex;
-  width: 100vw;
   align-items: center;
   overflow: hidden;
   height: 100vh;
-  margin-top: -25vh;
-  margin-bottom: -25vh;
-  padding-top: 25vh;
-  padding-bottom: 25vh;
 }
 
 .about-skill {
@@ -108,10 +114,6 @@ export default {
   align-items: center;
   height: 100vh;
   width: 100vw;
-  margin-top: -25vh;
-  margin-bottom: -25vh;
-  padding-bottom: 25vh;
-  padding-top: 25vh;
 }
 
 .container-full-height {
@@ -138,13 +140,67 @@ export default {
   width: 100%;
 }
 
-.summary-img {
-  min-width: 45vh;
-}
+  .project__next {
+    padding-left: 7vw;
+    padding-right: 4vw;
+    position: relative;
+  }
+
+  .section__title {
+    width: 140px;
+    color: #030303;
+    margin: 0 0 1rem;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .1875em;
+  }
+
+  .project__title {
+    font-size: 1.625rem;
+    font-weight: 100;
+    color: #4e4e4e;
+    position: relative;
+    margin: 0;
+  }
+
+  .project__next svg {
+    position: absolute;
+    left: calc(70% + 4rem);
+    bottom: .5rem;
+  }
 
 @media only screen and (max-width: 960px) {
   .banner-img {
     max-width: 550px !important;
+  }
+
+  .container-full-height {
+    overflow: unset;
+    height: 100vh;
+    margin-top: unset;
+    margin-bottom: unset;
+    height: 45vh;
+  }
+
+  .img-full-height {
+    transform: unset;
+    z-index: unset;
+    object-fit: contain;
+    min-height: unset;
+  }
+
+  .home-container {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    height: auto;
+  }
+
+  .horizontal-container .v-image {
+    max-width: 100%;
+    height: auto !important;
+    margin-top: 10px;
+    width: auto !important;
   }
 }
 
@@ -155,6 +211,14 @@ export default {
 }
 
 @media only screen and (max-width: 500px) {
+  .project__next {
+    padding: 5vh;
+  }
+
+  .project__next svg {
+    left: unset;
+    bottom: 1rem;
+  }
   .banner-img {
     max-width: 400px !important;
   }
@@ -162,6 +226,14 @@ export default {
     min-height: 55vh !important;
   }
 
+  .home-container {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .img-full-height {
+    position: relative;
+  }
 }
 
 @media only screen and (max-width: 400px) {

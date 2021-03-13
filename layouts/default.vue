@@ -2,7 +2,7 @@
   v-app(dark='')
     NavBar(:navItems="navItems", :socialLinks="socialLinks")
 
-    v-main.main
+    v-main.main.pa-md-0
       nuxt
     Footer(:socialLinks='socialLinks')
     cursor-fx(:key="$route.fullPath")
@@ -23,7 +23,7 @@ export default {
   data () {
     return {
       navItems: [
-        { id: 1, title: 'a propos', link: 'about' },
+        { id: 1, title: 'à propos', link: 'about' },
         { id: 2, title: 'portfolio', link: 'portfolio' },
         { id: 3, title: 'contact', link: 'contact' }
       ],
@@ -81,5 +81,11 @@ export default {
 
   .main::-webkit-scrollbar {
     display: none;
+  }
+
+  @media only screen and (max-width: 960px) {
+    .main {
+      height: unset;
+    }
   }
 </style>
