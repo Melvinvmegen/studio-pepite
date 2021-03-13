@@ -1,6 +1,7 @@
 <template lang="pug">
   v-card.footer.flex(height="165")
     v-footer(padless='' absolute)
+      scroll-progress-bar(height="4px" containerColor="rgba(173,171,172,.2)" :background-color="backgroundColor")
       v-card.white.flex(flat='' tile='')
         v-card-title.white.pl-4
           .d-flex.flex-column.align-center(:class="{'justify-center': $vuetify.breakpoint.smAndDown, 'container': $vuetify.breakpoint.smAndDown}")
@@ -18,16 +19,23 @@
 </template>
 
 <script>
+import ScrollProgressBar from '~/components/ScrollProgressBar/ScrollProgressBar'
 import Logo from '~/components/Logo'
 
 export default {
   components: {
-    Logo
+    Logo,
+    ScrollProgressBar
   },
   props: {
     socialLinks: {
       type: Array,
       default: null
+    }
+  },
+  computed: {
+    backgroundColor () {
+      return 'linear-gradient(90deg, rgb(150, 227, 255) 25%, rgb(168, 181, 255) 50%, rgb(184, 163, 244) 75%, rgb(227, 204, 219) 100%'
     }
   }
 }
@@ -50,6 +58,14 @@ export default {
 
   .email {
     font-size: 14px;
+  }
+
+  .progress-bar-container--container {
+    position: absolute !important;
+    width: 20% !important;
+    left: unset !important;
+    right: 4vw;
+    top: calc(4vh + 2rem) !important;
   }
 
   @media only screen and (max-width: 960px) {
