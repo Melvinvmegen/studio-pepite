@@ -195,7 +195,6 @@ export default {
 
 @media only screen and (max-width: 350px) {
   .header {
-    max-height: 60vh !important;
     margin: auto;
   }
 }
