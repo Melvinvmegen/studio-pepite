@@ -29,6 +29,15 @@
           //-       | interior design for architecture/developers
           //-     li(style='transform: translate(0px, 0px); opacity: 1;')
           //-       | vr visualization tours
+    .project__next(ref="banner_3" v-if="$route.name === 'about'")
+      nuxt-link(to="/portfolio" data-cursor-hover data-cursor-mix-blend-mode="difference" )
+        h2.section__title
+          | découvrez
+        h3.project__title
+          | mon portfolio
+        svg(width='58' height='12' xmlns='http://www.w3.org/2000/svg')
+          path(d='M48.31.82L57.52 6l-9.21 5.18-.49-.87L54.59 6.5H.5v-1h54.091l-6.772-3.81.49-.87z' fill='#030303')
+
     slot
 
 </template>
@@ -131,6 +140,35 @@ export default {
   width: 100%;
 }
 
+  .project__next {
+    padding-left: 7vw;
+    padding-right: 4vw;
+    position: relative;
+  }
+
+  .section__title {
+    width: 140px;
+    color: #030303;
+    margin: 0 0 1rem;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .1875em;
+  }
+
+  .project__title {
+    font-size: 1.625rem;
+    font-weight: 100;
+    color: #4e4e4e;
+    position: relative;
+    margin: 0;
+  }
+
+  .project__next svg {
+    position: absolute;
+    left: calc(70% + 4rem);
+    bottom: .5rem;
+  }
+
 @media only screen and (max-width: 960px) {
   .banner-img {
     max-width: 550px !important;
@@ -173,6 +211,14 @@ export default {
 }
 
 @media only screen and (max-width: 500px) {
+  .project__next {
+    padding: 5vh;
+  }
+
+  .project__next svg {
+    left: unset;
+    bottom: 1rem;
+  }
   .banner-img {
     max-width: 400px !important;
   }

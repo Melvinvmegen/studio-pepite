@@ -2,6 +2,13 @@
   .full-horizontal-container
     .section-home.horizontal-container(:style="{ width: setWidth }")
       BannerLeft.col-md-2.col-12.pa-md-0(:blabla='blabla' ref="banner_1")
+        br
+        .project__previous(v-if='previous_project')
+          nuxt-link.d-flex(:to="{ name: 'portfolio-name', params: { index: index - 1, name: previous_project.link }}" data-cursor-hover data-cursor-mix-blend-mode="difference" )
+            svg(width='58' height='12' xmlns='http://www.w3.org/2000/svg')
+              path(d='M48.31.82L57.52 6l-9.21 5.18-.49-.87L54.59 6.5H.5v-1h54.091l-6.772-3.81.49-.87z' fill='#030303')
+            h2.section__title
+              | précédent
       .col-md-1.col-0.w-10vw
       BannerRight.col-md-6.col-12.pa-md-0(:image="blabla.img" :blabla='blabla')
         .home-container.d-flex.justify-center.align-center(ref="banner_2")
@@ -28,6 +35,7 @@ export default {
     return {
       blabla: null,
       next_project: null,
+      previous_project: null,
       index: this.$route.params.index,
       isMounted: false
     }
@@ -35,6 +43,7 @@ export default {
   created () {
     this.blabla = this.$store.state.projectImages[this.$route.params.index]
     this.next_project = this.$store.state.projectImages[this.$route.params.index + 1]
+    this.previous_project = this.$store.state.projectImages[this.$route.params.index - 1]
   },
   computed: {
     setWidth () {
@@ -57,6 +66,15 @@ export default {
 <style scoped>
   .w-10vw {
     max-width: 10vw;
+  }
+
+  .project__previous svg {
+    transform: rotate(180deg);
+    margin: 0.5rem 0 0;
+  }
+
+  .project__previous .section__title {
+    margin: 0 0 1rem 1rem;
   }
 
   .project__next {
