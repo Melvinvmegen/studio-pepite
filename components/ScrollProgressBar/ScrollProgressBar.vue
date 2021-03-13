@@ -1,5 +1,5 @@
 <template lang='pug'>
-  div(:class="containerClass" :style="{ background: containerColor, zIndex: zIndex}")
+  div(:class="containerClass" :style="{ background: containerColor, zIndex: zIndex}" v-if='show')
     div(:class="barClass" :style="{ width: `${width}%`, height: height, background: backgroundColor}")
 </template>
 
@@ -38,29 +38,35 @@ export default {
   },
   data () {
     return {
-      width: 0
+      width: 0,
+      show: false
     }
   },
   mounted () {
     this.width = 0
     const horizontalContainer = document.querySelector('.full-horizontal-container')
-    let passiveIfSupported = false
-    try {
-      const options = {
-        get passive () {
-          passiveIfSupported = { passive: true }
-          return false
+    this.show = horizontalContainer !== null
+    if (horizontalContainer) {
+      let passiveIfSupported = false
+      try {
+        const options = {
+          get passive () {
+            passiveIfSupported = { passive: true }
+            return false
+          }
         }
-      }
-      horizontalContainer.addEventListener('test', null, options)
-      horizontalContainer.removeEventListener('test', null, options)
-    } catch (error) {}
-    horizontalContainer.addEventListener('scroll', throttle(this.handleScroll, 15), passiveIfSupported)
-    horizontalContainer.dispatchEvent(new Event('scroll'))
+        horizontalContainer.addEventListener('test', null, options)
+        horizontalContainer.removeEventListener('test', null, options)
+      } catch (error) {}
+      horizontalContainer.addEventListener('scroll', throttle(this.handleScroll, 15), passiveIfSupported)
+      horizontalContainer.dispatchEvent(new Event('scroll'))
+    }
   },
   destroyed () {
     const horizontalContainer = document.querySelector('.full-horizontal-container')
-    horizontalContainer.removeEventListener('scroll', this.handleScroll)
+    if (horizontalContainer) {
+      horizontalContainer.removeEventListener('scroll', this.handleScroll)
+    }
   },
   methods: {
     handleScroll () {

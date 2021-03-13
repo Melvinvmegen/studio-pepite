@@ -1,8 +1,8 @@
 <template lang="pug">
   v-card.footer.flex(height="170")
     v-footer(padless='' absolute)
-      scroll-progress-bar(height="4px" containerColor="rgba(173,171,172,.2)" :background-color="backgroundColor" :key="$route.path")
-      h2.title__scrollbar scroll
+      scroll-progress-bar(height="4px" containerColor="rgba(173,171,172,.2)" :background-color="backgroundColor" :key="$route.path" @begin="showscrollbar = true")
+      h2.title__scrollbar(v-if='showscrollbar') scroll
       v-card.white.flex(flat='' tile='')
         v-card-title.white.pl-4
           .d-flex.flex-column.align-center(:class="{'justify-center': $vuetify.breakpoint.smAndDown, 'container': $vuetify.breakpoint.smAndDown}")
@@ -32,6 +32,11 @@ export default {
     socialLinks: {
       type: Array,
       default: null
+    }
+  },
+  data () {
+    return {
+      showscrollbar: false
     }
   },
   computed: {
