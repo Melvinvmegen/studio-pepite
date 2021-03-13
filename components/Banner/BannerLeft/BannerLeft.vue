@@ -4,6 +4,7 @@
       TextHeader(:blabla="blabla")
         span(v-html="blabla.description")
         CTA(v-if="ctaText && link" :className="true" color="accent" :text="ctaText" :link="link")
+        slot
 </template>
 
 <script>
