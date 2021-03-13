@@ -1,20 +1,6 @@
-<template>
-  <div
-    :class="containerClass"
-    :style="{
-      background: containerColor,
-      zIndex: zIndex
-    }"
-  >
-    <div
-      :class="barClass"
-      :style="{
-        width: `${width}%`,
-        height: height,
-        background: backgroundColor
-      }"
-    />
-  </div>
+<template lang='pug'>
+  div(:class="containerClass" :style="{ background: containerColor, zIndex: zIndex}")
+    div(:class="barClass" :style="{ width: `${width}%`, height: height, background: backgroundColor}")
 </template>
 
 <script>
@@ -56,8 +42,8 @@ export default {
     }
   },
   mounted () {
+    this.width = 0
     const horizontalContainer = document.querySelector('.full-horizontal-container')
-    console.log(horizontalContainer)
     let passiveIfSupported = false
     try {
       const options = {
@@ -79,13 +65,8 @@ export default {
   methods: {
     handleScroll () {
       const horizontalContainer = document.querySelector('.full-horizontal-container')
-      console.log(document.documentElement.scrollHeight - document.documentElement.clientHeight)
-      console.log(horizontalContainer.scrollWidth - horizontalContainer.clientWidth)
-      const documentWidth = document.documentElement.scrollWidth - document.documentElement.clientWidth
-      this.width = (window.scrollX / documentWidth) * 100
+      this.width = (horizontalContainer.scrollTop / document.documentElement.clientWidth) * 45
       const eventWidth = Math.ceil(this.width)
-      console.log(documentWidth, this.width, eventWidth)
-
       if (eventWidth === 0) {
         this.$emit('begin')
       }
