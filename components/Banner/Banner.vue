@@ -45,7 +45,7 @@ export default {
       if (!this.isMounted) {
         return 300 + 'vw'
       }
-      return (this.$refs.banner_1.$el.clientWidth + this.$refs.banner_2.$el.clientWidth) + 'px'
+      return (this.$refs.banner_1.$el.scrollWidth + this.$refs.banner_2.$el.scrollWidth * 1.075) + 'px'
     }
   },
   mounted () {
