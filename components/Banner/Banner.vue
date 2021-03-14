@@ -175,6 +175,13 @@ export default {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .horizontal-container .v-image {
+    height: 400px !important;
+    width: 600px !important;
+  }
+}
+
 @media only screen and (max-width: 500px) {
   .horizontal-container {
     height: auto;
