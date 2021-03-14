@@ -61,7 +61,7 @@ export default {
   display: flex;
   position: relative;
   padding: 0;
-  height: calc(80vh - 100px);
+  height: calc(85vh - 100px);
   min-height: 700px;
 }
 
