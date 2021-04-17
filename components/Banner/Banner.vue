@@ -61,8 +61,7 @@ export default {
   display: flex;
   position: relative;
   padding: 0;
-  height: calc(85vh - 100px);
-  min-height: 700px;
+  height: calc(90vh - 70px);
 }
 
 .full-horizontal-container {

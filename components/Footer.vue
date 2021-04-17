@@ -1,8 +1,8 @@
 <template lang="pug">
-  v-card.footer.flex(height="170")
+  v-card.footer.flex
     v-footer(padless='' absolute)
       v-card.white.flex(flat='' tile='')
-        v-card-title.white.pl-4
+        v-card-title.white.pl-md-4.pa-0
           .d-flex.flex-column.align-center(:class="{'justify-center': $vuetify.breakpoint.smAndDown, 'container': $vuetify.breakpoint.smAndDown}")
             v-spacer
             a.email(href="mailto:contact@studiopepite.com" data-cursor-hover data-cursor-mix-blend-mode="difference") contact@studiopepite.com
@@ -50,5 +50,21 @@ export default {
 
   .email {
     font-size: 14px;
+  }
+
+  .footer {
+    max-height: 147px !important;
+  }
+
+  @media only screen and (max-width: 960px) {
+    .footer {
+      height: 179px !important;
+    }
+  }
+
+  @media only screen and (max-width: 420px) {
+    .footer {
+      height: 164px !important;
+    }
   }
 </style>
