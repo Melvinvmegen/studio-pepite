@@ -46,7 +46,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   .contact_content {
     padding-left: 15vw;
   }
