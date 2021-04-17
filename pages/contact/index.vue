@@ -21,8 +21,8 @@
               span.contact_details-separator.detail-separator
               span.contact_details-value.detail-value
                 a.black--text(href="tel:33668374980") +33 6 68 37 49 80
-      .contact-img.col-6.d-flex.justify-center
-        img.d-flex.justify-center.img-contact(src="~/assets/contact.jpg" width="550" data-cursor-hover data-cursor-mix-blend-mode="difference")
+      .contact-img.col-md-6.col-10.d-flex.justify-center
+        img.d-flex.justify-center.img-contact(src="~/assets/contact.jpg" data-cursor-hover data-cursor-mix-blend-mode="difference")
 
 </template>
 
@@ -110,32 +110,34 @@ export default {
     margin: auto;
   }
 
+  .img-contact {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    max-width: 550px;
+  }
+
   @media only screen and (max-width: 960px) {
     .contact-container {
       padding: 5vh 0;
     }
     .contact_content {
       padding: 0;
-      max-height: 40%;
-    }
-
-    .img-contact {
-      object-fit: contain;
-      height: 500px;
-    }
-  }
-
-  @media only screen and (max-width: 500px) {
-    .contact_content {
       max-height: 50%;
     }
 
     .contact-img {
+      padding: 0;
       max-height: 50%;
     }
+  }
 
-    .img-contact {
-      height: 400px;
+  @media only screen and (max-width: 500px) {
+    .details {
+      margin: 0 !important;
+    }
+    .contact_content {
+      max-height: 70%;
     }
 
     .detail-value {
