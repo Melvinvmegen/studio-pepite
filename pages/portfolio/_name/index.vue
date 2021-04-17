@@ -10,7 +10,7 @@
             h2.section__title
               | précédent
       .col-md-1.col-0.w-10vw
-      BannerRight.col-md-6.col-12.pa-md-0(:image="blabla.img" :blabla='blabla')
+      BannerRight.col-md-6.col-12.pa-md-0(:blabla='blabla')
         .home-container.d-flex.justify-center.align-center(ref="banner_2")
           v-img(v-for="project in blabla.projectImages" :src='require(`~/assets/${project.img}`)' width="500" height='600' data-cursor-hover data-cursor-mix-blend-mode="difference")
         .project__next(v-if='next_project' ref="banner_3")
@@ -25,12 +25,8 @@
 </template>
 
 <script>
-import Banner from '~/components/Banner/Banner'
 
 export default {
-  components: {
-    Banner
-  },
   data () {
     return {
       blabla: null,
@@ -39,11 +35,6 @@ export default {
       index: this.$route.params.index,
       isMounted: false
     }
-  },
-  created () {
-    this.blabla = this.$store.state.projectImages[this.$route.params.index]
-    this.next_project = this.$store.state.projectImages[this.$route.params.index + 1]
-    this.previous_project = this.$store.state.projectImages[this.$route.params.index - 1]
   },
   computed: {
     setWidth () {
@@ -57,6 +48,12 @@ export default {
       return (this.$refs.banner_1.$el.clientWidth + this.$refs.banner_2.clientWidth + nextProject) * 1.1 + 'px'
     }
   },
+  created () {
+    this.blabla = this.$store.state.projectImages[this.$route.params.index]
+    this.next_project = this.$store.state.projectImages[this.$route.params.index + 1]
+    this.previous_project = this.$store.state.projectImages[this.$route.params.index - 1]
+  },
+
   mounted () {
     this.isMounted = true
   }

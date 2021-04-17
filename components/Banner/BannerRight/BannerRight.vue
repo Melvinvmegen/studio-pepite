@@ -1,7 +1,7 @@
 <template lang="pug">
   .header-right.flex-md-row.flex-column
     .home-container.d-flex.justify-center.align-center(v-if="$route.name === 'index'")
-      nuxt-link(v-for="(projectImage, index) in projectImages"  :to="{ name: 'portfolio-name', params: { index: index, name: projectImage.link, project: projectImage, next_project: projectImages[index + 1] }}")
+      nuxt-link(v-for="(projectImage, index) in projectImages" :key='projectImage.title' :to="{ name: 'portfolio-name', params: { index: index, name: projectImage.link, project: projectImage, next_project: projectImages[index + 1] }}")
         v-img(:src='require(`~/assets/${projectImage.src}`)' :title='projectImage.title' :href='projectImage.link' width="500" height="600" data-cursor-hover data-cursor-mix-blend-mode="difference")
     .about-container(v-if="$route.name === 'about'")
       .about-skill
@@ -40,10 +40,6 @@ export default {
     TextHeader
   },
   props: {
-    image: {
-      type: String,
-      default: null
-    },
     projectImages: {
       type: Array,
       default: null
