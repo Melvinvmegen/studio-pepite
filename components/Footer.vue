@@ -51,4 +51,20 @@ export default {
   .email {
     font-size: 14px;
   }
+
+  .footer {
+    max-height: 147px !important;
+  }
+
+  @media only screen and (max-width: 960px) {
+    .footer {
+      height: 179px !important;
+    }
+  }
+
+  @media only screen and (max-width: 420px) {
+    .footer {
+      height: 164px !important;
+    }
+  }
 </style>
