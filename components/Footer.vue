@@ -2,7 +2,7 @@
   v-card.footer.flex
     v-footer(padless='' absolute)
       v-card.white.flex(flat='' tile='')
-        v-card-title.white.pl-4.pa-0
+        v-card-title.white.pl-md-4.pa-0
           .d-flex.flex-column.align-center(:class="{'justify-center': $vuetify.breakpoint.smAndDown, 'container': $vuetify.breakpoint.smAndDown}")
             v-spacer
             a.email(href="mailto:contact@studiopepite.com" data-cursor-hover data-cursor-mix-blend-mode="difference") contact@studiopepite.com
