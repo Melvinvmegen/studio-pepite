@@ -19,18 +19,7 @@
             TextHeader(:blabla="blablaPepite")
               span(v-html="blablaPepite.description")
 
-    .about-container(v-if="$route.name === 'prestations'")
-      .service-img
-        img(src="~/assets/prestations.jpeg" width="500" data-cursor-hover data-cursor-mix-blend-mode="difference")
-      .drawing-service(v-for='service in blablaDrawing')
-        .d-flex.justify-space-around
-          .about-text.col-md-8.col-12
-            TextHeader(:blabla="service")
-              span(v-html="service.description")
-        nuxt-link(:to="{ name: 'portfolio' }" v-if="service.src")
-          v-img(:src='require(`~/assets/${service.src}`)' :title='service.title' :href='service.link' width="500" height="600" data-cursor-hover data-cursor-mix-blend-mode="difference")
-
-    .project__next(ref="banner_3" v-if="$route.name === 'about' || $route.name === 'prestations'")
+    .project__next(ref="banner_3" v-if="$route.name === 'about'")
       nuxt-link(to="/portfolio" data-cursor-hover data-cursor-mix-blend-mode="difference" )
         h2.section__title
           | découvrez
@@ -69,33 +58,7 @@ export default {
       blablaPepite: {
         title: 'pourquoi pépite ? ',
         description: "une pépite par définition (au sens figuré) est une chose dont l'exceptionnelle qualité attire l'attention, un trésor. il est donc de mon devoir de faire de chacun de vos projet, une petite pépite."
-      },
-      blablaDrawing: [
-        {
-          title: 'dessinatrice 2D :',
-          description: 'plans d’agencements, dossier technique, coupes, élévations, détails de mobilier, croquis',
-          link: 'portfolio',
-          src: 'prestations/INFO 2D.jpeg'
-
-        },
-        {
-          title: 'dessinatrice 3D :',
-          description: 'construction / modélisation 3D, placage de texture, rendu photoréaliste',
-          link: 'portfolio',
-          src: 'prestations/INFO 3D.jpeg'
-        },
-        {
-          title: 'designer d’espace :',
-          description: 'aménagement de l’espace, proposition d’identité visuelle ("personnel branding"), proposition d’identité de lieux (moodboard, planches tendance…), croquis d’ambiance',
-          link: 'portfolio',
-          src: 'prestations/DESIGNER.jpeg'
-
-        },
-        {
-          title: 'relevés :',
-          description: 'prises de côtes, réalisations de plans'
-        }
-      ]
+      }
     }
   }
 }
@@ -141,14 +104,6 @@ export default {
   align-items: center;
   height: 100vh;
   width: 100vw;
-}
-
-.service-img {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 30vw;
-  height: 100vh;
 }
 
 .drawing-service {

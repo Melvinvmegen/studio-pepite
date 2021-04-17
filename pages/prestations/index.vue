@@ -1,6 +1,15 @@
 <template lang="pug">
   .full
-    Banner(:blabla='blabla' :ctaText="ctaText" :link="link")
+    .d-flex.justify-center.align-center.full-container
+      .header.col-md-6.col-12(:style="{ backgroundImage: 'url(' + require(`@/assets/pepite.png`) + ')' }")
+        v-container.pa-md-0.justify-center.d-flex.align-md-center.align-start
+          TextHeader(:blabla="blabla" :after='false')
+            span(v-html="blabla.description")
+            CTA(v-if="ctaText && link" :className="true" color="accent" :text="ctaText" :link="link")
+
+      .about-container.col-md-5.col-12(v-if="$route.name === 'prestations'")
+        .prestation-img
+          img(src="~/assets/prestations.jpeg" width="500" data-cursor-hover data-cursor-mix-blend-mode="difference")
 </template>
 
 <script>
@@ -14,7 +23,31 @@ export default {
     return {
       blabla: {
         title: 'ce que je vous propose',
-        description: 'diplômée d’un bac scientifique à hyères (83) en 2016, j’ai intégré l’institut cread de lyon en 2017 et serai diplômée d’un titre d’architecte d’intérieur en juin 2021. <br><br>ces 4 ans d’apprentissage d’architecture intérieure et de design global m’ont aidé à me forger une identité créative, singulière et affirmée. néanmoins, la découverte du métier d’architecte d’intérieur m’a donné envie d’évoluer vers l’architecture de gros oeuvre et ainsi pouvoir gérer un projet dans son ensemble. <br><br>c’est pourquoi, j’aspire à intégrer en équivalence une des écoles nationales supérieures d’architecture de france. je travaille en freelance en parallèle de mes études, depuis novembre 2020. ma société "pépite" propose ces services en qualité d’architecte d’intérieur : dessin de plans, croquis, modélisations 3D, agencement intérieur, identité de lieu…'
+        description: `
+          <div class="details">
+            <div class="contact_details detail">
+              <span class="contact_details-label detail-label">dessin 2D :</span>
+              <span class="contact_details-separator detail-separator"></span>
+              <br>
+              plans d’agencements, dossier technique, coupes, élévations, détails de mobilier, croquis
+            </div>
+            <div class="contact_details detail">
+              <span class="contact_details-label detail-label">dessin 3D :</span>
+              <span class="contact_details-separator detail-separator"></span>
+              construction / modélisation 3D, placage de texture, rendu photoréaliste
+            </div>
+            <div class="contact_details detail">
+              <span class="contact_details-label detail-label">design d’espace :</span>
+              <span class="contact_details-separator detail-separator"></span>
+               aménagement de l’espace, proposition d’identité visuelle ("personnel branding"), proposition d’identité de lieux (moodboard, planches tendance…), croquis d’ambiance
+            </div>
+            <div class="contact_details detail">
+              <span class="contact_details-label detail-label">relevés :</span>
+              <span class="contact_details-separator detail-separator"></span>
+              prises de côtes, réalisations de plans
+            </div>
+          </div>
+        `
       },
       ctaText: 'contactez moi',
       link: 'Contact'
@@ -22,3 +55,71 @@ export default {
   }
 }
 </script>
+
+<style>
+  .full-container {
+    height: calc(90vh - 70px);
+    padding-left: 10vw;
+  }
+
+  .details .detail {
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 500;
+    text-transform: uppercase;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0 0 1.25rem;
+  }
+
+  .details .detail .detail-label {
+    padding-right: 5%;
+    font-weight: 700;
+  }
+
+  .details .detail .detail-separator {
+    height: 1px;
+    background-color: #979797;
+    -webkit-box-flex: 2;
+    -ms-flex-positive: 2;
+    flex-grow: 2;
+    width: 75%;
+  }
+
+  .details .detail .detail-value {
+    padding-left: 5%;
+    width: 45%;
+    margin: 0;
+    font-weight: 600;
+    margin-top: .5rem;
+  }
+
+  .prestation-img {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .prestation-img img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  @media only screen and (max-width: 960px) {
+    .full-container {
+      height: auto;
+      padding-left: 0;
+      flex-direction: column;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .detail-separator {
+      width: 40% !important;
+    }
+  }
+</style>
