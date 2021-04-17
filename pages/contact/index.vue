@@ -14,13 +14,13 @@
                 | E-mail
               span.contact_details-separator.detail-separator
               span.contact_details-value.detail-value
-                | CONTACT@STUDIOPEPITE.COM
+                a.black--text(href="mailto:contact@studiopepite.com") CONTACT@STUDIOPEPITE.COM
             .contact_details.detail
               span.contact_details-label.detail-label
                 | Téléphone
               span.contact_details-separator.detail-separator
               span.contact_details-value.detail-value
-                | +33 6 68 37 49 80
+                a.black--text(href="tel:33668374980") +33 6 68 37 49 80
       .contact-img.col-6.d-flex.justify-center
         img.d-flex.justify-center.img-contact(src="~/assets/contact.jpg" width="550" data-cursor-hover data-cursor-mix-blend-mode="difference")
 
