@@ -70,8 +70,10 @@ export default {
   },
   methods: {
     handleScroll () {
-      const horizontalContainer = document.querySelector('.full-horizontal-container')
-      this.width = (horizontalContainer.scrollTop / document.documentElement.clientWidth) * 45
+      const fullHorizontalContainer = document.querySelector('.full-horizontal-container')
+      const horizontalContainer = document.querySelector('.horizontal-container')
+      const width = horizontalContainer.clientWidth - (fullHorizontalContainer.clientWidth * 2.55)
+      this.width = (fullHorizontalContainer.scrollTop / width) * 100
       const eventWidth = Math.ceil(this.width)
       if (eventWidth === 0) {
         this.$emit('begin')
