@@ -4,7 +4,7 @@
       .d-flex.align-center.main-header-left
         nuxt-link(:to="{path: '/'}")
           Logo(color="defaultlogo")
-      .main-header-center.col-lg-3(v-if="this.$vuetify.breakpoint.mdAndUp")
+      .main-header-center.col-lg-4(v-if="this.$vuetify.breakpoint.mdAndUp")
         v-list-item.nav-item.nav-anim(v-for="item in navItems" dark exact :key="item.name")
           nuxt-link(:to="{name: item.link}")
             .primary--text(data-cursor-hover data-cursor-mix-blend-mode="difference") {{ item.title }}

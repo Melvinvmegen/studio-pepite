@@ -45,7 +45,7 @@ export default {
       if (!this.isMounted) {
         return 300 + 'vw'
       }
-      return (this.$refs.banner_1.$el.clientWidth + this.$refs.banner_2.$el.clientWidth) + 'px'
+      return (this.$refs.banner_1.$el.scrollWidth + this.$refs.banner_2.$el.scrollWidth * 1.075) + 'px'
     }
   },
   mounted () {
@@ -61,8 +61,7 @@ export default {
   display: flex;
   position: relative;
   padding: 0;
-  height: calc(80vh - 100px);
-  min-height: 700px;
+  height: calc(90vh - 70px);
 }
 
 .full-horizontal-container {
@@ -175,6 +174,13 @@ export default {
   }
 }
 
+@media only screen and (max-width: 768px) {
+  .horizontal-container .v-image {
+    height: 400px !important;
+    width: 600px !important;
+  }
+}
+
 @media only screen and (max-width: 500px) {
   .horizontal-container {
     height: auto;
@@ -195,7 +201,6 @@ export default {
 
 @media only screen and (max-width: 350px) {
   .header {
-    max-height: 60vh !important;
     margin: auto;
   }
 }

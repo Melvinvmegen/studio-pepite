@@ -1,6 +1,6 @@
 <template lang="pug">
   v-container.pa-md-0(:class="{'align-center': $vuetify.breakpoint.smAndDown}")
-    h2(:class="{ 'primary-border': color, 'white--text': white }" v-html="blabla.title")
+    h2(:class="{ 'primary-border': color, 'white--text': white, 'after': after }" v-html="blabla.title")
     br
     slot
 </template>
@@ -17,13 +17,17 @@ export default {
       default: 'left'
     },
     color: Boolean,
-    white: Boolean
+    white: Boolean,
+    after: {
+      type: Boolean,
+      default: true
+    }
   }
 }
 </script>
 
 <style scoped>
-  h2:after {
+  .after:after {
     content: "";
     display: block;
     margin-top: 1rem;

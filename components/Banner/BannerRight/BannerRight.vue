@@ -1,7 +1,7 @@
 <template lang="pug">
   .header-right.flex-md-row.flex-column
     .home-container.d-flex.justify-center.align-center(v-if="$route.name === 'index'")
-      nuxt-link(v-for="(projectImage, index) in projectImages"  :to="{ name: 'portfolio-name', params: { index: index, name: projectImage.link, project: projectImage, next_project: projectImages[index + 1] }}")
+      nuxt-link(v-for="(projectImage, index) in projectImages" :key='projectImage.title' :to="{ name: 'portfolio-name', params: { index: index, name: projectImage.link, project: projectImage, next_project: projectImages[index + 1] }}")
         v-img(:src='require(`~/assets/${projectImage.src}`)' :title='projectImage.title' :href='projectImage.link' width="500" height="600" data-cursor-hover data-cursor-mix-blend-mode="difference")
     .about-container(v-if="$route.name === 'about'")
       .about-skill
@@ -18,17 +18,7 @@
           .about-text.col-md-8.col-12
             TextHeader(:blabla="blablaPepite")
               span(v-html="blablaPepite.description")
-          //- .about-skills.col-5
-          //-   h2 WHAT I DO
-          //-   ul(data-fade='right' data-fadetarget='children')
-          //-     li(style='transform: translate(0px, 0px); opacity: 1;')
-          //-       | ilustrations
-          //-     li(style='transform: translate(0px, 0px); opacity: 1;')
-          //-       | architecture ilustrations
-          //-     li(style='transform: translate(0px, 0px); opacity: 1;')
-          //-       | interior design for architecture/developers
-          //-     li(style='transform: translate(0px, 0px); opacity: 1;')
-          //-       | vr visualization tours
+
     .project__next(ref="banner_3" v-if="$route.name === 'about'")
       nuxt-link(to="/portfolio" data-cursor-hover data-cursor-mix-blend-mode="difference" )
         h2.section__title
@@ -50,10 +40,6 @@ export default {
     TextHeader
   },
   props: {
-    image: {
-      type: String,
-      default: null
-    },
     projectImages: {
       type: Array,
       default: null
@@ -116,6 +102,22 @@ export default {
   width: 100vw;
 }
 
+.drawing-service {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+  width: 60vw;
+}
+
+.drawing-service:last-child {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 100vh;
+  width: 20vw;
+}
+
 .container-full-height {
   overflow: hidden;
   height: 100vh;
@@ -140,34 +142,34 @@ export default {
   width: 100%;
 }
 
-  .project__next {
-    padding-left: 7vw;
-    padding-right: 4vw;
-    position: relative;
-  }
+.project__next {
+  padding-left: 7vw;
+  padding-right: 4vw;
+  position: relative;
+}
 
-  .section__title {
-    width: 140px;
-    color: #030303;
-    margin: 0 0 1rem;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: .1875em;
-  }
+.section__title {
+  width: 140px;
+  color: #030303;
+  margin: 0 0 1rem;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .1875em;
+}
 
-  .project__title {
-    font-size: 1.625rem;
-    font-weight: 100;
-    color: #4e4e4e;
-    position: relative;
-    margin: 0;
-  }
+.project__title {
+  font-size: 1.625rem;
+  font-weight: 100;
+  color: #4e4e4e;
+  position: relative;
+  margin: 0;
+}
 
-  .project__next svg {
-    position: absolute;
-    left: calc(70% + 4rem);
-    bottom: .5rem;
-  }
+.project__next svg {
+  position: absolute;
+  left: calc(70% + 4rem);
+  bottom: .5rem;
+}
 
 @media only screen and (max-width: 960px) {
   .banner-img {

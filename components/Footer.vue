@@ -1,10 +1,10 @@
 <template lang="pug">
-  v-card.footer.flex(height="170")
+  v-card.footer.flex
     v-footer(padless='' absolute)
       scroll-progress-bar(height="4px" containerColor="rgba(173,171,172,.2)" :background-color="backgroundColor" :key="$route.path" @begin="showscrollbar = true")
       h2.title__scrollbar(v-if='showscrollbar') scroll
       v-card.white.flex(flat='' tile='')
-        v-card-title.white.pl-4
+        v-card-title.white.pl-md-4.pa-0
           .d-flex.flex-column.align-center(:class="{'justify-center': $vuetify.breakpoint.smAndDown, 'container': $vuetify.breakpoint.smAndDown}")
             v-spacer
             a.email(href="mailto:contact@studiopepite.com" data-cursor-hover data-cursor-mix-blend-mode="difference") contact@studiopepite.com
@@ -82,35 +82,20 @@ export default {
     z-index: 51;
     font-size: 17px;
   }
+  
+  .footer {
+    max-height: 147px !important;
+  }
 
   @media only screen and (max-width: 960px) {
     .footer {
-      height: 558px !important;
+      height: 179px !important;
     }
   }
 
-  @media only screen and (max-width: 600px) {
+  @media only screen and (max-width: 420px) {
     .footer {
-      height: 822px !important;
-    }
-  }
-
-  @media only screen and (max-width: 500px) {
-    .footer-list:last-child {
-      max-width: 100%;
-      flex: 0 0 100%;
-    }
-  }
-
-  @media only screen and (max-width: 370px) {
-    .footer {
-      height: 839px !important;
-    }
-  }
-
-  @media only screen and (max-width: 340px) {
-    .footer {
-      height: 855px !important;
+      height: 164px !important;
     }
   }
 </style>

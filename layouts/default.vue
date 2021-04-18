@@ -25,7 +25,8 @@ export default {
       navItems: [
         { id: 1, title: 'à propos', link: 'about' },
         { id: 2, title: 'portfolio', link: 'portfolio' },
-        { id: 3, title: 'contact', link: 'contact' }
+        { id: 3, title: 'prestations', link: 'prestations' },
+        { id: 4, title: 'contact', link: 'contact' }
       ],
       socialLinks: [
         { id: 1, icon: 'mdi-instagram', href: 'https://www.instagram.com/studio.pepite/' },
