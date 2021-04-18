@@ -82,7 +82,7 @@ export default {
     z-index: 51;
     font-size: 17px;
   }
-  
+
   .footer {
     max-height: 147px !important;
   }
