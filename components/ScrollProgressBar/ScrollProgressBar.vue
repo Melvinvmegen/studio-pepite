@@ -43,10 +43,9 @@ export default {
     }
   },
   mounted () {
-    this.width = 0
     const horizontalContainer = document.querySelector('.full-horizontal-container')
     this.show = horizontalContainer !== null
-    if (horizontalContainer) {
+    if (this.show) {
       let passiveIfSupported = false
       try {
         const options = {
@@ -64,7 +63,7 @@ export default {
   },
   destroyed () {
     const horizontalContainer = document.querySelector('.full-horizontal-container')
-    if (horizontalContainer) {
+    if (this.show) {
       horizontalContainer.removeEventListener('scroll', this.handleScroll)
     }
   },
@@ -72,7 +71,7 @@ export default {
     handleScroll () {
       const fullHorizontalContainer = document.querySelector('.full-horizontal-container')
       const horizontalContainer = document.querySelector('.horizontal-container')
-      const width = horizontalContainer.clientWidth - (fullHorizontalContainer.clientWidth * 2.55)
+      const width = horizontalContainer.clientWidth - (fullHorizontalContainer.clientWidth * 2)
       this.width = (fullHorizontalContainer.scrollTop / width) * 100
       const eventWidth = Math.ceil(this.width)
       if (eventWidth === 0) {
@@ -92,5 +91,6 @@ export default {
   width: 100%;
   top: 0;
   left: 0;
+  overflow: hidden;
 }
 </style>
