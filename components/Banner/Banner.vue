@@ -50,6 +50,11 @@ export default {
   },
   mounted () {
     this.isMounted = true
+    this.$store.commit('toggleMounted', this.isMounted)
+  },
+  destroyed () {
+    this.isMounted = false
+    this.$store.commit('toggleMounted', this.isMounted)
   }
 }
 </script>

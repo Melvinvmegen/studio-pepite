@@ -14,10 +14,12 @@
 
 <script>
 import Banner from '~/components/Banner/Banner'
+import CTA from '~/components/CTA/CTA'
 
 export default {
   components: {
-    Banner
+    Banner,
+    CTA
   },
   data () {
     return {

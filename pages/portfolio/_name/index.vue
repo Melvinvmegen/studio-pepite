@@ -53,9 +53,13 @@ export default {
     this.next_project = this.$store.state.projectImages[this.$route.params.index + 1]
     this.previous_project = this.$store.state.projectImages[this.$route.params.index - 1]
   },
-
   mounted () {
     this.isMounted = true
+    this.$store.commit('toggleMounted', this.isMounted)
+  },
+  destroyed () {
+    this.isMounted = false
+    this.$store.commit('toggleMounted', this.isMounted)
   }
 }
 </script>
