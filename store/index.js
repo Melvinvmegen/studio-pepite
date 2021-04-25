@@ -1,4 +1,5 @@
 export const state = () => ({
+  fullContainerMounted: false,
   projectImages: [
     {
       title: 'le bioclimatique en co-living',
@@ -171,3 +172,9 @@ export const state = () => ({
     }
   ]
 })
+
+export const mutations = {
+  toggleMounted (state, payload) {
+    state.fullContainerMounted = payload
+  }
+}

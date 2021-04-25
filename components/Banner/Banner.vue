@@ -50,6 +50,12 @@ export default {
   },
   mounted () {
     this.isMounted = true
+    this.$store.commit('toggleMounted', this.isMounted)
+  },
+  destroyed () {
+    console.log('destroyed banner')
+    this.isMounted = false
+    this.$store.commit('toggleMounted', this.isMounted)
   }
 }
 </script>

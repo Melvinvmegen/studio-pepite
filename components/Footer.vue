@@ -1,8 +1,8 @@
 <template lang="pug">
   v-card.footer.flex
     v-footer(padless='' absolute)
-      scroll-progress-bar(height="4px" containerColor="rgba(173,171,172,.2)" :background-color="backgroundColor" :key="$route.path" @begin="showscrollbar = true")
-      h2.title__scrollbar(v-if='showscrollbar') scroll
+      scroll-progress-bar(height="4px" containerColor="rgba(173,171,172,.2)" :background-color="backgroundColor" :key="$route.path" v-if='showScrollBar')
+      h2.title__scrollbar(v-if='showScrollBar') scroll
       v-card.white.flex(flat='' tile='')
         v-card-title.white.pl-md-4.pa-0
           .d-flex.flex-column.align-center(:class="{'justify-center': $vuetify.breakpoint.smAndDown, 'container': $vuetify.breakpoint.smAndDown}")
@@ -34,12 +34,10 @@ export default {
       default: null
     }
   },
-  data () {
-    return {
-      showscrollbar: false
-    }
-  },
   computed: {
+    showScrollBar () {
+      return this.$store.state.fullContainerMounted
+    },
     backgroundColor () {
       return 'linear-gradient(90deg, rgb(150, 227, 255) 25%, rgb(168, 181, 255) 50%, rgb(184, 163, 244) 75%, rgb(227, 204, 219) 100%'
     }
