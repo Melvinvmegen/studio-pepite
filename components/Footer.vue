@@ -78,7 +78,7 @@ export default {
     position: absolute !important;
     left: unset !important;
     right: 1vw;
-    top: calc(3vh + 2rem) !important;
+    top: calc(3vh + 1.5rem) !important;
     z-index: 51;
     font-size: 17px;
   }
