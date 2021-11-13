@@ -2,21 +2,10 @@ export const state = () => ({
   fullContainerMounted: false,
   projectImages: [
     {
-      title: 'le bioclimatique en co-living',
-      link: 'le-bioclimatique-en-co-living',
-      src: 'project_1.jpg',
-      description: 'projet mémoire de fin d’étude en cours de construction … bientôt en ligne !',
-      projectImages: [
-        { img: 'project_1.jpg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' },
-        { img: 'project_1.jpg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' },
-        { img: 'project_1.jpg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' }
-      ]
-    },
-    {
       title: 'l’antre de l’artiste',
       link: 'antre-de-l’artiste',
       src: 'ARTISTE.jpeg',
-      description: `projet en freelance de transformation d’un vielle appartement en bureau / atelier. désir de créer un lieu à l’identité 
+      description: `projet en freelance de transformation d’un viel appartement en bureau / atelier. désir de créer un lieu à l’identité 
             industrielle et actuel en gardant une âme rétro.`,
       projectImages: [
         { img: 'antre_de_lartiste/ART_P1.jpg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' },
@@ -136,22 +125,6 @@ export const state = () => ({
         { img: 'jimi_hendrix/CUISINE_1.jpeg', title: 'Classement des meilleurs ostéopathes par ville en fonction de leurs notations.' },
         { img: 'jimi_hendrix/CUISINE_2.jpeg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' },
         { img: 'jimi_hendrix/VUE_DESSUS.jpeg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' }
-      ]
-    },
-    {
-      title: 'revival',
-      link: 'revival',
-      src: 'project_6.jpg',
-      description: `projet de rénovation d’une villa d’environ 200m2 à Marcy (69) pour une famille de 4 personnes. projet réalisé 
-            seule en deuxième année d’école. <br>la tendance mid century etait fortement souhaitée notemment par l’utilisation 
-            de matériaux nobles (cuivre, pierre, bois, pièces d’art...). logiciels utilisés pour la réalisation de ce projet : 
-            autocad, sketchup, excel.`,
-      projectImages: [
-        { img: 'revival/GABARIT PHOTOS5.jpg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
-        { img: 'revival/GABARIT PHOTOS6.jpg', title: 'Classement des meilleurs ostéopathes par ville en fonction de leurs notations.' },
-        { img: 'revival/GABARIT PHOTOS8.jpg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' },
-        { img: 'revival/GABARIT PHOTOS9.jpg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' },
-        { img: 'revival/GABARIT PHOTOS10.jpg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' }
       ]
     },
     {

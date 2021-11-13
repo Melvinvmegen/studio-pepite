@@ -1,7 +1,7 @@
 <template lang="pug">
   .full
     .d-flex.justify-center.align-center.full-container
-      .header.col-md-6.col-12(:style="{ backgroundImage: 'url(' + require(`@/assets/pepite.png`) + ')' }")
+      .header.col-md-6.col-12
         v-container.pa-md-0.justify-center.d-flex.align-md-center.align-start
           TextHeader(:blabla="blabla" :after='false')
             span(v-html="blabla.description")
@@ -24,13 +24,12 @@ export default {
   data () {
     return {
       blabla: {
-        title: 'ce que je vous propose',
+        title: 'prestations détaillées',
         description: `
           <div class="details">
             <div class="contact_details detail">
               <span class="contact_details-label detail-label">dessin 2D :</span>
               <span class="contact_details-separator detail-separator"></span>
-              <br>
               plans d’agencements, dossier technique, coupes, élévations, détails de mobilier, croquis
             </div>
             <div class="contact_details detail">
@@ -79,7 +78,7 @@ export default {
   }
 
   .details .detail .detail-label {
-    padding-right: 5%;
+    padding-right: 1%;
     font-weight: 700;
   }
 

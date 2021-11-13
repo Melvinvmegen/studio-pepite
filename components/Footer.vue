@@ -1,10 +1,10 @@
 <template lang="pug">
-  v-card.footer.flex
-    v-footer(padless='' absolute)
+  v-card.footer.flex.transparent
+    v-footer.transparent(padless='' absolute)
       scroll-progress-bar(height="4px" containerColor="rgba(173,171,172,.2)" :background-color="backgroundColor" :key="$route.path" v-if='showScrollBar')
-      h2.title__scrollbar(v-if='showScrollBar') scroll
-      v-card.white.flex(flat='' tile='')
-        v-card-title.white.pl-md-4.pa-0
+      h2.title__scrollbar.ml-4(v-if='showScrollBar') SCROLL
+      v-card.flex.transparent(flat='' tile='')
+        v-card-title.pl-md-4.pa-0
           .d-flex.flex-column.align-center(:class="{'justify-center': $vuetify.breakpoint.smAndDown, 'container': $vuetify.breakpoint.smAndDown}")
             v-spacer
             a.email(href="mailto:contact@studiopepite.com" data-cursor-hover data-cursor-mix-blend-mode="difference") contact@studiopepite.com
@@ -14,7 +14,7 @@
                   v-icon(size='24px')
                     | {{ link.icon }}
         v-divider
-        v-card-text.text-center
+        v-card-text.text-center.white
           | {{ new Date().getFullYear() }} &mdash;
           strong Melvinvmegen
 </template>
@@ -75,7 +75,7 @@ export default {
   .title__scrollbar {
     position: absolute !important;
     left: unset !important;
-    right: 1vw;
+    right: 0.5vw;
     top: calc(3vh + 1.5rem) !important;
     z-index: 51;
     font-size: 17px;
