@@ -48,12 +48,18 @@ export default {
   data () {
     return {
       blabla: {
-        title: 'mon identitée',
-        description: 'j’ai grandi au bord de la méditerranée et ai été très vite attirée et inspirée par l’architecture typique provençale, solaire. <br><br> à force de voyages, de lectures et de recherches des grands noms et courants du 20ème siècle (le corbusier, mies van der rohe, williams, prouvé, l’école du bauhaus, l’influence allemande et américaine…) je me suis découverte une passion pour l’architecture aux lignes droites et franches, et aux matériaux bruts, façonnés par le temps (béton, bois, métaux). <br><br>aujourd’hui, j’ai pour avis qu’il est indispensable de penser et de construire en étant responsables du point de vue de l’environnement et de l’écologie. le respect des matériaux, des sites, des échanges humains et du travail sont des points incontestables de l’architecture de demain.'
+        title: 'Mon identité',
+        description: `Je suis originaire du sud de la France et ayant grandi au bord de la Méditerranée, j’ai très vite été attirée et inspirée par l’architecture typique provençale, solaire. 
+                      <br><br> 
+                      À force de voyages, d’expositions, de lectures et de recherches des grands noms et courants du 20ème siècle (Le Corbusier, Mies van Der Rohe, Williams, Prouvé, Neutra, l’école du Bauhaus, l’influence Allemande et Américaine…) je me suis découverte une passion pour l’architecture aux lignes droites et franches, et aux matériaux bruts, façonnés par le temps (béton, bois, métaux). 
+                      <br><br>
+                      Aujourd’hui, j’ai pour avis qu’il est indispensable de penser et de construire en étant responsables. 
+                      <br><br>
+                      L’environnement, l’écologie. le respect des matériaux, des sites de construction et les échanges humains sont des points incontestables de l’architecture de demain.`
       },
       blablaPepite: {
-        title: 'pourquoi pépite ? ',
-        description: "une pépite par définition (au sens figuré) est une chose dont l'exceptionnelle qualité attire l'attention, un trésor. il est donc de mon devoir de faire de chacun de vos projet, une petite pépite."
+        title: 'Pourquoi "Pépite" ?',
+        description: "Une pépite par définition (au sens figuré) est une chose dont l'exceptionnelle qualité attire l’attention. Elle est définie comme un trésor. Il est donc de mon devoir de faire de chacun de vos projet, une petite pépite."
       }
     }
   }

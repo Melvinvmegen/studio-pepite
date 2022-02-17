@@ -12,9 +12,9 @@
         v-app-bar-nav-icon(@click.stop="drawer= true")
 
       v-navigation-drawer(v-model='drawer' absolute='' temporary='' fixed right)
-        v-icon.float-right.mr-4.mt-4(@click.stop="drawer = false") mdi-close
+        v-icon.float-right.mr-2.mt-2(@click.stop="drawer = false") mdi-close
         br
-        v-list(nav='' dense='')
+        v-list.mt-2(nav='' dense='')
           v-list-item-group
             v-list-item.nav-anim(v-for='item in navItems' :key='item.title' two-line exact :to="{name: item.link}")
               v-list-item-content

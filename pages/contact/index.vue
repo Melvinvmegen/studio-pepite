@@ -3,11 +3,9 @@
     .d-flex.contact-container.flex-column.flex-md-row
       .contact_content.col-lg-6.col-md-7.col-10
         .col-md-9.col-12
-          h1.contact_title
-            | contact
+          h1.contact_title {{ title }}
           .contact_text
-            p
-              | je vis actuellement en france. n'hésitez pas à me contacter si vous avez des questions, des suggestions ou des offres.
+            p {{ description }}
           .details.contact_details
             .contact_details.detail
               span.contact_details-label.detail-label
@@ -35,10 +33,8 @@ export default {
   },
   data () {
     return {
-      blabla: {
-        title: 'hello, my name is fanny coderey and I love good design',
-        description: 'Always been a freelancer who is trying to sort out his 3d world. In 2015, I finished studying Industrial Design at Institute of Industrial Design in Koszalin. The university has helped me gain sensitivity and get to know myself better through various faculties I have experienced. 3d graphics helps me express myself, show my world and my own projects on the border of art, architecture and design. I was inspired by a number of different trends during my short 3d career which has then translated into projects I carried out.'
-      },
+      title: 'Contact',
+      description: "Je vis actuellement en France. N'hésitez pas à me contacter si vous avez des questions, des suggestions ou des offres. À bientôt !",
       ctaText: 'contact me',
       link: 'Contact'
     }
