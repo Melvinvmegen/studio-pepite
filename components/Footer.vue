@@ -2,7 +2,7 @@
   v-card.footer.flex.transparent
     v-footer.transparent(padless='' absolute)
       scroll-progress-bar(height="4px" containerColor="rgba(173,171,172,.2)" :background-color="backgroundColor" :key="$route.path" v-if='showScrollBar')
-      h2.title__scrollbar.ml-4(v-if='showScrollBar') SCROLL
+      h2.title__scrollbar(v-if='showScrollBar') SCROLL
       v-card.flex.transparent(flat='' tile='')
         v-card-title.pl-md-4.pa-0
           .d-flex.flex-column.align-center(:class="{'justify-center': $vuetify.breakpoint.smAndDown, 'container': $vuetify.breakpoint.smAndDown}")
@@ -85,14 +85,22 @@ export default {
     max-height: 147px !important;
   }
 
+  @media only screen and (max-width: 1950px) {
+    .title__scrollbar {
+      right: 0;
+    }
+  }
+
   @media only screen and (max-width: 960px) {
     .footer {
+      max-height: 179px !important;
       height: 179px !important;
     }
   }
 
   @media only screen and (max-width: 420px) {
     .footer {
+      max-height: 164px !important;
       height: 164px !important;
     }
   }

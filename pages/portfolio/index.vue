@@ -3,10 +3,10 @@
     .portfolio-container
       .projects__heading.pa-2
         h1.page__title
-          | mes travaux
+          | Mes travaux
       v-row.scroll-container(no-gutters='')
-        v-col(v-for='(project, index) in projectImages' :index="project.index" :key='project.title' cols='12' sm='4' data-cursor-hover data-cursor-mix-blend-mode="difference")
-          nuxt-link(:to="{ name: 'portfolio-name', params: { index: index, name: project.link, project: project, next_project: projectImages[index + 1] }}")
+        v-col(v-for='(project, index) in projects' :index="project.index" :key='project.title' cols='12' sm='4' data-cursor-hover data-cursor-mix-blend-mode="difference")
+          nuxt-link(:to="{ name: 'portfolio-name', params: { index: index, name: project.link, project: project, next_project: projects[index + 1] }}")
             v-card.pa-2
               v-img.project-img(:src='require(`~/assets/${project.src}`)' height='200px' :alt="project.title" :href="project.link")
               v-card-title
@@ -24,68 +24,12 @@ export default {
   data () {
     return {
       blabla: {
-        title: 'hello, my name is fanny coderey and I love good design',
-        description: 'Always been a freelancer who is trying to sort out his 3d world. In 2015, I finished studying Industrial Design at Institute of Industrial Design in Koszalin. The university has helped me gain sensitivity and get to know myself better through various faculties I have experienced. 3d graphics helps me express myself, show my world and my own projects on the border of art, architecture and design. I was inspired by a number of different trends during my short 3d career which has then translated into projects I carried out.'
+        title: 'Bonjour, je m’appelle Fanny et j’ai créé Pépite <br> pour vous en faire voir de toutes les couleurs',
+        description: ''
       },
       ctaText: 'contact me',
       link: 'Contact',
-      projectImages: [
-        {
-          title: 'le bioclimatique en co-living',
-          link: 'le-bioclimatique-en-co-living',
-          src: 'project_1.jpg'
-        },
-        {
-          title: 'l’antre de l’artiste',
-          link: 'l’antre-de-l’artiste',
-          src: 'ARTISTE.jpeg'
-        },
-        {
-          title: 'la théorie du jeu',
-          link: 'la-théorie-du-jeu',
-          src: 'project_2.jpg'
-        },
-        {
-          title: 'retrorama',
-          link: 'retrorama',
-          src: 'project_3.jpg'
-        },
-        {
-          title: 'maison p',
-          link: 'maison-p',
-          src: 'PICON.jpeg'
-        },
-        {
-          title: 'appartement lillois',
-          link: 'appartement-lillois',
-          src: 'LILLE.jpeg'
-        },
-        {
-          title: 'jacquemus',
-          link: 'jacquemus',
-          src: 'project_4.jpg'
-        },
-        {
-          title: 'dumbo stairs',
-          link: 'dumbo-stairs',
-          src: 'project_8.jpg'
-        },
-        {
-          title: 'jimi hendrix',
-          link: 'jimi-hendrix',
-          src: 'project_5.jpg'
-        },
-        {
-          title: 'revival',
-          link: 'revival',
-          src: 'project_6.jpg'
-        },
-        {
-          title: 'miro x mondrian',
-          link: 'miro-x-mondrian',
-          src: 'project_7.jpg'
-        }
-      ]
+      projects: this.$store.state.projects
     }
   }
 }
@@ -140,7 +84,7 @@ export default {
 
   @media only screen and (max-width: 500px) {
     .portfolio-container {
-      padding-top: 0;
+      padding-top: 50px;
       height: auto;
       padding-left: 10vw;
       padding-right: 10vw;

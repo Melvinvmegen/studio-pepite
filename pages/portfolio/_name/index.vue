@@ -49,9 +49,10 @@ export default {
     }
   },
   created () {
-    this.blabla = this.$store.state.projectImages[this.$route.params.index]
-    this.next_project = this.$store.state.projectImages[this.$route.params.index + 1]
-    this.previous_project = this.$store.state.projectImages[this.$route.params.index - 1]
+    const index = this.$store.state.projects.findIndex(project => project.link === this.$route.params.name)
+    this.blabla = this.$store.state.projects[index]
+    this.next_project = this.$store.state.projects[index + 1]
+    this.previous_project = this.$store.state.projects[index - 1]
   },
   mounted () {
     this.isMounted = true

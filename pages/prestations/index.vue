@@ -24,7 +24,7 @@ export default {
   data () {
     return {
       blabla: {
-        title: 'prestations détaillées',
+        title: 'Prestations détaillées',
         description: `
           <div class="details">
             <div class="contact_details detail">
