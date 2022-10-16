@@ -63,7 +63,7 @@ export default {
   },
   destroyed () {
     const horizontalContainer = document.querySelector('.full-horizontal-container')
-    if (this.show) {
+    if (this.show && horizontalContainer) {
       horizontalContainer.removeEventListener('scroll', this.handleScroll)
     }
   },

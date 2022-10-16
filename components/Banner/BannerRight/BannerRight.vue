@@ -2,32 +2,13 @@
   .header-right.flex-md-row.flex-column
     .home-container.d-flex.justify-center.align-center(v-if="$route.name === 'index'")
       nuxt-link(v-for="(projectImage, index) in projectImages" :key='projectImage.title' :to="{ name: 'portfolio-name', params: { index: index, name: projectImage.link, project: projectImage, next_project: projectImages[index + 1] }}")
-        v-img(:src='require(`~/assets/${projectImage.src}`)' :title='projectImage.title' :href='projectImage.link' width="500" height="600" data-cursor-hover data-cursor-mix-blend-mode="difference")
-    .about-container(v-if="$route.name === 'about'")
-      .about-skill
-        img(src="~/assets/about_me.jpg" width="500" data-cursor-hover data-cursor-mix-blend-mode="difference")
-        .d-flex.justify-space-around
-          .about-text.col-md-8.col-12
-            TextHeader(:blabla="blabla")
-              span(v-html="blabla.description")
-      .about_summary
-        .summary-img.col-md-4
-          .container-full-height
-            img.img-full-height(src="~/assets/about_pepite.jpg" data-cursor-hover data-cursor-mix-blend-mode="difference")
-        .d-flex.justify-space-around.col-md-8
-          .about-text.col-md-8.col-12
-            TextHeader(:blabla="blablaPepite")
-              span(v-html="blablaPepite.description")
-
-    .project__next(ref="banner_3" v-if="$route.name === 'about'")
-      nuxt-link(to="/portfolio" data-cursor-hover data-cursor-mix-blend-mode="difference" )
-        h2.section__title
-          | découvrez
-        h3.project__title
-          | mon portfolio
-        svg(width='58' height='12' xmlns='http://www.w3.org/2000/svg')
-          path(d='M48.31.82L57.52 6l-9.21 5.18-.49-.87L54.59 6.5H.5v-1h54.091l-6.772-3.81.49-.87z' fill='#030303')
-
+        v-img.project-img(:src='require(`~/assets/${projectImage.src}`)' :title='projectImage.title' :href='projectImage.link' width="500" height="600" data-cursor-hover data-cursor-mix-blend-mode="difference")
+    v-container.col-12.pa-md-0.about_container.flex-md-row.flex-column(v-if="$route.name === 'about'")
+      img(src="~/assets/about_me.jpg" width="500" data-cursor-hover data-cursor-mix-blend-mode="difference")
+      .about_summary.col-md-6.col-12
+        TextHeader(:blabla="blablaPepite")
+          span(v-html="blablaPepite.description")
+          CTA(v-if="ctaText && link" :className="true" color="accent" :text="ctaText" :link="link")
     slot
 
 </template>
@@ -47,20 +28,13 @@ export default {
   },
   data () {
     return {
-      blabla: {
-        title: 'Mon identité',
-        description: `Je suis originaire du sud de la France et ayant grandi au bord de la Méditerranée, j’ai très vite été attirée et inspirée par l’architecture typique provençale, solaire. 
-                      <br><br> 
-                      À force de voyages, d’expositions, de lectures et de recherches des grands noms et courants du 20ème siècle (Le Corbusier, Mies van Der Rohe, Williams, Prouvé, Neutra, l’école du Bauhaus, l’influence Allemande et Américaine…) je me suis découverte une passion pour l’architecture aux lignes droites et franches, et aux matériaux bruts, façonnés par le temps (béton, bois, métaux). 
-                      <br><br>
-                      Aujourd’hui, j’ai pour avis qu’il est indispensable de penser et de construire en étant responsables. 
-                      <br><br>
-                      L’environnement, l’écologie. le respect des matériaux, des sites de construction et les échanges humains sont des points incontestables de l’architecture de demain.`
-      },
       blablaPepite: {
         title: 'Pourquoi "Pépite" ?',
-        description: "Une pépite par définition (au sens figuré) est une chose dont l'exceptionnelle qualité attire l’attention. Elle est définie comme un trésor. Il est donc de mon devoir de faire de chacun de vos projet, une petite pépite."
-      }
+        description: `Une pépite par définition (au sens figuré) est une chose dont l'exceptionnelle qualité attire l’attention. 
+                      est définie comme un trésor. C’est donc mon objectif de faire de chacun de vos projet, une petite pépite !`
+      },
+      ctaText: 'Découvrez mon portfolio',
+      link: '/portfolio'
     }
   }
 }
@@ -81,8 +55,7 @@ export default {
   padding: 50px 0 !important;
 }
 
-.about-container {
-  padding-left: 10vw;
+.about_container {
   height: 100%;
   display: flex;
   justify-content: center;
@@ -94,18 +67,11 @@ export default {
 }
 
 .about_summary {
+  padding-left: 10vw;
   display: inline-flex;
   align-items: center;
   overflow: hidden;
   height: 100vh;
-}
-
-.about-skill {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
 }
 
 .drawing-service {
@@ -155,9 +121,8 @@ export default {
 }
 
 .section__title {
-  width: 140px;
+  margin: 0 1rem !important;
   color: #030303;
-  margin: 0 0 1rem;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: .1875em;
@@ -215,6 +180,14 @@ export default {
 @media only screen and (max-width: 600px) {
   .banner-img {
     max-width: 500px !important;
+  }
+
+  .section__title {
+    margin: 0 1rem 0 0 !important;
+  }
+
+  .about_summary {
+    padding: 0 !important;
   }
 }
 

@@ -1,5 +1,5 @@
 <template lang="pug">
-  v-app-bar.white(app='' fixed elevate-on-scroll height="70")
+  v-app-bar.white(app fixed elevate-on-scroll)
     .col-12.d-flex.justify-space-between.align-center.header-container
       .d-flex.align-center.main-header-left
         nuxt-link(:to="{path: '/'}")

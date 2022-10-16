@@ -2,8 +2,9 @@
   v-app(dark='')
     NavBar(:navItems="navItems", :socialLinks="socialLinks")
 
-    v-main.main.pa-md-0
-      nuxt
+    v-main.pa-md-0(app)
+      v-fade-transition(mode="out-in")
+        nuxt
     Footer(:socialLinks='socialLinks')
     cursor-fx(:key="$route.fullPath")
 </template>
@@ -23,10 +24,9 @@ export default {
   data () {
     return {
       navItems: [
-        { id: 1, title: 'à propos', link: 'about' },
-        { id: 2, title: 'portfolio', link: 'portfolio' },
-        { id: 3, title: 'prestations', link: 'prestations' },
-        { id: 4, title: 'contact', link: 'contact' }
+        { id: 1, title: 'À PROPOS', link: 'about' },
+        { id: 2, title: 'PORTFOLIO', link: 'portfolio' },
+        { id: 3, title: 'CONTACT', link: 'contact' }
       ],
       socialLinks: [
         { id: 1, icon: 'mdi-instagram', href: 'https://www.instagram.com/studio.pepite/' },
@@ -38,14 +38,6 @@ export default {
 </script>
 
 <style>
-  @font-face {
-    font-family: 'Cocogoose';
-    font-style: normal;
-    font-weight: 400;
-    font-display: swap;
-    src: url('~assets/Cocogoose.ttf') format('truetype');
-  }
-
   .v-application a {
     text-decoration: none;
   }
@@ -58,8 +50,13 @@ export default {
     font-size: 14px
   }
 
+  h1 {
+    font-weight: 500;
+    line-height: 2;
+  }
+
   h2 {
-    font-weight: 600;
+    font-weight: 400;
     line-height: 2;
   }
 
@@ -74,14 +71,6 @@ export default {
 
   button {
     cursor: none !important;
-  }
-
-  .main {
-    height: 70vh;
-  }
-
-  .main::-webkit-scrollbar {
-    display: none;
   }
 
   @media only screen and (max-width: 960px) {

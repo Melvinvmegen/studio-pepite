@@ -15,7 +15,7 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    "avoidEscape": true,
-    "allowTemplateLiterals": true
+    "avoidEscape": 0,
+    "allowTemplateLiterals": 0
   }
 }

@@ -3,7 +3,7 @@
     .d-flex.contact-container.flex-column.flex-md-row
       .contact_content.col-lg-6.col-md-7.col-10
         .col-md-9.col-12
-          h1.contact_title {{ title }}
+          h1 {{ title }}
           .contact_text
             p {{ description }}
           .details.contact_details
@@ -36,7 +36,7 @@ export default {
       title: 'Contact',
       description: "Je vis actuellement en France. N'hésitez pas à me contacter si vous avez des questions, des suggestions ou des offres. À bientôt !",
       ctaText: 'contact me',
-      link: 'Contact'
+      link: 'contact'
     }
   }
 }
@@ -52,13 +52,6 @@ export default {
     padding: 25vh 0;
     align-items: center;
     height: 73vh;
-  }
-
-  .contact_title {
-    font-weight: 800;
-    font-size: 1.625rem;
-    color: #4e4e4e;
-    margin: 0 0 1.75rem;
   }
 
   .details {
@@ -85,6 +78,10 @@ export default {
     width: 29%;
   }
 
+  .detail-separator:first-child {
+    margin-left: -16px !important;
+  }
+
   .details .detail .detail-separator {
     height: 1px;
     background-color: #979797;
@@ -92,10 +89,10 @@ export default {
     -ms-flex-positive: 2;
     flex-grow: 2;
     width: 26%;
+    margin-left: 10px;
   }
 
   .details .detail .detail-value {
-    padding-left: 5%;
     width: 45%;
     margin: 0;
     font-weight: 600;
@@ -129,6 +126,10 @@ export default {
   }
 
   @media only screen and (max-width: 500px) {
+    .details .detail .detail-value {
+      padding-left: 5%;
+    }
+
     .details {
       margin: 0 !important;
     }

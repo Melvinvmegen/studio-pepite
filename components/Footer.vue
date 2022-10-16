@@ -1,22 +1,15 @@
 <template lang="pug">
-  v-card.footer.flex.transparent
-    v-footer.transparent(padless='' absolute)
-      scroll-progress-bar(height="4px" containerColor="rgba(173,171,172,.2)" :background-color="backgroundColor" :key="$route.path" v-if='showScrollBar')
-      h2.title__scrollbar(v-if='showScrollBar') SCROLL
-      v-card.flex.transparent(flat='' tile='')
-        v-card-title.pl-md-4.pa-0
-          .d-flex.flex-column.align-center(:class="{'justify-center': $vuetify.breakpoint.smAndDown, 'container': $vuetify.breakpoint.smAndDown}")
-            v-spacer
-            a.email(href="mailto:contact@studiopepite.com" data-cursor-hover data-cursor-mix-blend-mode="difference") contact@studiopepite.com
-            .icons.col-2
-              v-btn(v-for='link in socialLinks' :key='link.id' icon='' data-cursor-hover data-cursor-mix-blend-mode="difference")
-                a(:href="link.href")
-                  v-icon(size='24px')
-                    | {{ link.icon }}
-        v-divider
-        v-card-text.text-center.white
-          | {{ new Date().getFullYear() }} &mdash;
-          strong Melvinvmegen
+  v-footer.transparent(padless='' absolute app :height="$vuetify.breakpoint.mdAndUp ? '45px' : '100px'")
+    scroll-progress-bar(height="4px" containerColor="rgba(173,171,172,.2)" :background-color="backgroundColor" :key="$route.path" v-if='showScrollBar')
+    v-card.flex.transparent(flat='' tile='')
+      v-card-text.text-center.white
+        v-row(align="center" justify="center")
+          span {{ new Date().getFullYear() }} &mdash;
+          a.email(href="mailto:contact@studiopepite.com" data-cursor-hover data-cursor-mix-blend-mode="difference") contact@studiopepite.com
+          v-btn(v-for='link in socialLinks' :key='link.id' icon='' data-cursor-hover data-cursor-mix-blend-mode="difference")
+            NuxtLink(:to="link.href")
+              v-icon(size='24px')
+                | {{ link.icon }}
 </template>
 
 <script>
@@ -66,29 +59,16 @@ export default {
 
   .progress-bar-container--container {
     position: absolute !important;
-    width: 20% !important;
-    left: unset !important;
-    right: 4vw;
-    top: calc(4vh + 2rem) !important;
-  }
-
-  .title__scrollbar {
-    position: absolute !important;
-    left: unset !important;
-    right: 0.5vw;
-    top: calc(3vh + 1.5rem) !important;
-    z-index: 51;
-    font-size: 17px;
+    width: 17% !important;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    top: calc(-4vh + 2rem) !important;
   }
 
   .footer {
     max-height: 147px !important;
-  }
-
-  @media only screen and (max-width: 1950px) {
-    .title__scrollbar {
-      right: 0;
-    }
   }
 
   @media only screen and (max-width: 960px) {

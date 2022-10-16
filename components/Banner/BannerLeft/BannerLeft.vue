@@ -1,5 +1,5 @@
 <template lang="pug">
-  .header(:style="{ backgroundImage: 'url(' + require(`@/assets/pepite.png`) + ')' }")
+  .header
     v-container.col-12.pa-md-0.justify-center.d-flex.align-md-center.align-start
       TextHeader(:blabla="blabla")
         span(v-html="blabla.description")

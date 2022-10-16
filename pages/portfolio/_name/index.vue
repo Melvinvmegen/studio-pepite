@@ -12,7 +12,7 @@
       .col-md-1.col-0.w-10vw
       BannerRight.col-md-6.col-12.pa-md-0(:blabla='blabla')
         .home-container.d-flex.justify-center.align-center(ref="banner_2")
-          v-img(v-for="project in blabla.projectImages" :src='require(`~/assets/${project.img}`)' width="500" height='600' data-cursor-hover data-cursor-mix-blend-mode="difference")
+          v-img(v-for="project in blabla.projectImages" :key="project.title" :src='require(`~/assets/${project.img}`)' width="500" height='600' data-cursor-hover data-cursor-mix-blend-mode="difference")
         .project__next(v-if='next_project' ref="banner_3")
           nuxt-link(:to="{ name: 'portfolio-name', params: { index: index + 1, name: next_project.link }}" data-cursor-hover data-cursor-mix-blend-mode="difference" )
             h2.section__title
@@ -86,12 +86,7 @@ export default {
   }
 
   .section__title {
-    width: 140px;
-    color: #030303;
-    margin: 0 0 1rem;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: .1875em;
+    width: 150px;
   }
 
   .project__title {

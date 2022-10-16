@@ -45,7 +45,8 @@ export default {
       if (!this.isMounted) {
         return 300 + 'vw'
       }
-      return (this.$refs.banner_1.$el.scrollWidth + this.$refs.banner_2.$el.scrollWidth * 1.075) + 'px'
+      const deficit = this.$route.name === 'about' ? 500 : 0
+      return ((this.$refs.banner_1.$el.scrollWidth + this.$refs.banner_2.$el.scrollWidth - deficit) * 0.8) + 'px'
     }
   },
   mounted () {

@@ -4,6 +4,7 @@ export const state = () => ({
     {
       title: 'L’antre de l’artiste',
       link: 'antre-de-l’artiste',
+      category: 'CREAD Lyon',
       src: 'ARTISTE.jpeg',
       description: `Projet en freelance de transformation d’un vieil appartement en bureau / atelier. 
                     J’ai eu le désir de créer un lieu à l’identité industrielle et actuel en gardant une âme rétro.
@@ -18,6 +19,7 @@ export const state = () => ({
     {
       title: 'La théorie des jeux',
       link: 'la-théorie-du-jeu',
+      category: 'CREAD Lyon',
       src: 'project_2.jpg',
       description: `La théorie des jeux" est un projet fictif de 4ème année d’école (réalisé en groupe de 4) de rénovation d’un bâtiment dont l’usage 
             n’est plus défini, en espace socio-culturel, actuel et accessible pour tous. Un centre social et culturel est un lieu de proximité à vocation globale, 
@@ -40,6 +42,7 @@ export const state = () => ({
     {
       title: 'Rétrorama',
       link: 'retrorama',
+      category: 'CREAD Lyon',
       src: 'project_3.jpg',
       description: `Rétrorama c’est le projet fictif de rénovation d’un ancien bâtiment en "hostel" pour la chaine ho36. 
                     C’est un projet réalisé seule, en troisième année d’école. Le principe du concept est de créer un lieu 
@@ -57,21 +60,9 @@ export const state = () => ({
       ]
     },
     {
-      title: 'Maison P',
-      link: 'maison-p',
-      src: 'PICON.jpeg',
-      description: `Transformation d’une ancienne cuisine et salle à manger en chambre d'ami avec salle d'eau et dressing.
-                    <br><br>
-                    Logiciels utilisés pour les rendus 3D : SketchUp + TwinMotion`,
-      projectImages: [
-        { img: 'maison_p/CH_1.jpeg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' },
-        { img: 'maison_p/CH_2.jpeg', title: "Mise en place d'un hub de blog avec module de recherche d'article." },
-        { img: 'maison_p/VUE_GENERALE.jpeg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' }
-      ]
-    },
-    {
       title: 'Appartement Lillois',
       link: 'appartement-lillois',
+      category: 'Perso',
       src: 'LILLE.jpeg',
       description: `Rénovation complète d'un vieil appartement haussmannien d'environ 60 m2. L'objectif était de replacer les pièces selon une disposition précise et pratique. Il s'agissait également de créer un dressing et une cuisine avec un îlot, entièrement ouverte sur le salon.
                     <br><br>
@@ -86,6 +77,7 @@ export const state = () => ({
     {
       title: 'Jacquemus',
       link: 'jacquemus',
+      category: 'CREAD Lyon',
       src: 'project_4.jpg',
       description: `La cagole, c’est le projet  fictif de création de la première boutique physique de la marque française de prêt-à-porter jacquemus. 
                     Celui-ci était orienté autour des valeurs de la marque (la provence, le sud, le soleil...). 
@@ -107,6 +99,7 @@ export const state = () => ({
     {
       title: 'Dumbo stairs',
       link: 'dumbo-stairs',
+      category: 'ENSA PLV',
       src: 'project_8.jpg',
       description: `Participation (en équipe de 2, avec Justin, ingénieur) à un concours de création d’un escalier en béton, 
                     organisé par l’entreprise BPM groupe. Le produit présenté est un assemblage par câbles acier de blocs de béton 
@@ -120,43 +113,6 @@ export const state = () => ({
         { img: 'dumbo_stairs/dumbo_stairs_1.jpg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' },
         { img: 'dumbo_stairs/dumbo_stairs_2.jpg', title: "Mise en place d'un hub de blog avec module de recherche d'article." },
         { img: 'dumbo_stairs/dumbo_stairs_3.jpg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' }
-      ]
-    },
-    {
-      title: 'Jimi Hendrix',
-      link: 'jimi hendrix',
-      src: 'project_5.jpg',
-      description: `Conception d’un lieu chaleureux dans lequel les clients peuvent se projeter. Utilisation d’une oeuvre d’art représentant Jimi Dendrix par 
-                    l’artiste Thomas Krief. Projet (réalisé en freelance) d’aménagement d’un appartement acquis en vefa. <br><br>
-                    L’appartement se situe à Lyon, dans le troisième arrondissement. 
-                    Il est destiné à la location pour une petite famille. 
-                    Aménagement d’espaces verts dans le salon et sur la terrasse. 
-                    Technique de définition des espaces par la couleur.
-                    <br><br>
-                    Logiciels utilisés pour les rendus 3D : SketchUp + TwinMotion`,
-      projectImages: [
-        { img: 'jimi_hendrix/BALCON.jpeg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' },
-        { img: 'jimi_hendrix/CH.jpeg', title: "Mise en place d'un hub de blog avec module de recherche d'article." },
-        { img: 'jimi_hendrix/COULOIR.jpeg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
-        { img: 'jimi_hendrix/CUISINE_1.jpeg', title: 'Classement des meilleurs ostéopathes par ville en fonction de leurs notations.' },
-        { img: 'jimi_hendrix/CUISINE_2.jpeg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' },
-        { img: 'jimi_hendrix/VUE_DESSUS.jpeg', title: 'Module de recherche préfiltré en fonction de la page actuelle (ici ostéopathie pour bébé filtre les ostéopathes pour bébé).' }
-      ]
-    },
-    {
-      title: 'Miro x Mondrian',
-      link: 'miro-x-mondrian',
-      src: 'project_7.jpg',
-      description: `Le projet fictif "Ar(t)chitecture" consistait en la rénovation d’un appartement destiné à une location de courte durée. 
-                    Le maître d’ouvrage souhaitait un aménagement des plus atypiques. Projet réalisé seule, en deuxième année d’école. 
-                    <br> 
-                    J’ai pris la décision de trouver un fil conducteur à mon projet et d’en faire un lieu avant-gardiste, unique. 
-                    Mon inspiration provenait des galeries d’art et du peintre Joan Miro.`,
-      projectImages: [
-        { img: 'miro/miro_1.jpg', title: 'Création de temoignage pour les utilisateurs identifié ou non.' },
-        { img: 'miro/miro_2.jpg', title: "Mise en place d'un hub de blog avec module de recherche d'article." },
-        { img: 'miro/miro_3.jpg', title: 'Representation graphique de statistiques avec les éléments nécessaires.' },
-        { img: 'miro/miro_4.jpg', title: 'Classement des meilleurs ostéopathes par ville en fonction de leurs notations.' }
       ]
     }
   ]

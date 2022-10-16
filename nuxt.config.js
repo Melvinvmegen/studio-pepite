@@ -40,9 +40,7 @@ export default {
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/axios
-    '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/pwa
-    '@nuxtjs/pwa'
+    '@nuxtjs/axios'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -53,7 +51,7 @@ export default {
     treeShake: true,
     defaultAssets: {
       font: {
-        family: 'Cocogoose'
+        family: 'Montserrat Alternates'
       }
     },
     theme: {
