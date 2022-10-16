@@ -1,15 +1,15 @@
 <template lang="pug">
-    v-container.full
-      div(v-for="category in categories")
-        h1.px-2 {{ category }}
-        v-row
-          v-col(v-for='(project, index) in projects.filter(p => p.category === category)' :index="project.index" :key='project.title' cols='12' sm='4' data-cursor-hover data-cursor-mix-blend-mode="difference")
-            nuxt-link(:to="{ name: 'portfolio-name', params: { index: index, name: project.link, project: project, next_project: projects[index + 1] }}")
-              v-card.pa-2
-                v-img.project-img(:src='require(`~/assets/${project.src}`)' height='200px' :alt="project.title" :href="project.link")
-                v-card-title
-                  | {{ project.title }}
-        v-divider
+  v-container.full
+    div(v-for="category in categories")
+      h1.px-2 {{ category }}
+      v-row
+        v-col(v-for='(project, index) in projects.filter(p => p.category === category)' :index="project.index" :key='project.title' cols='12' sm='4' data-cursor-hover data-cursor-mix-blend-mode="difference")
+          nuxt-link(:to="{ name: 'portfolio-name', params: { index: index, name: project.link, project: project, next_project: projects[index + 1] }}")
+            v-card.pa-2
+              v-img.project-img(:src='require(`~/assets/${project.src}`)' height='200px' :alt="project.title" :href="project.link")
+              v-card-title
+                | {{ project.title }}
+      v-divider
 
 </template>
 

@@ -73,6 +73,12 @@ export default {
     cursor: none !important;
   }
 
+  @media (min-width: 1904px) {
+    .container {
+      max-width: 1185px;
+    }
+  }
+
   @media only screen and (max-width: 960px) {
     .main {
       height: unset;

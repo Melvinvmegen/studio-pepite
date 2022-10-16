@@ -121,7 +121,7 @@ export default {
 }
 
 .section__title {
-  margin: 0 1rem !important;
+  margin: 0 1rem 0 0 !important;
   color: #030303;
   font-size: 12px;
   text-transform: uppercase;
